@@ -170,14 +170,47 @@ html, body {
 #scroll-hint.hidden { opacity:0; }
 
 @media (max-width:850px) {
+  #scenes { overflow:hidden; }
+
   .scene {
-    grid-template-columns:1fr;
-    grid-template-rows:auto auto;
-    padding:90px 6vw 60px;
-    overflow-y:auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: 80px 7vw 90px;
+    gap: 18px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  .scene-img-wrap { max-width:340px; }
-  #scene-dots { right:4vw; }
+
+  .scene-img-wrap {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .scene-text { max-width: 100%; }
+
+  .scene-title { font-size: 24px; margin-bottom: 10px; }
+  .scene-desc { font-size: 13px; }
+  .scene-eyebrow { font-size: 9px; margin-bottom: 8px; }
+  .scene-btn { margin-top: 16px; padding: 12px 24px; font-size: 10px; }
+
+  /* Sağdaki dikey nokta gösterge mobilde alt ortaya, yatay sıraya alınır */
+  #scene-dots {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 14px;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 8px;
+    z-index: 60;
+  }
+
+  #scroll-hint { bottom: 44px; }
+
+  #navbar { padding: 14px 5vw; }
 }
 
 /* ── Yatay mobil (kısa yükseklik): görseller navbar/yazılarla çakışmasın ── */

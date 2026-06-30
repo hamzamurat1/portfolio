@@ -406,21 +406,39 @@ body {
 
 </style>
 
-/* ── Mobil dikey: yan kartları gizle, video tam genişlik olsun ── */
+/* ── Mobil dikey: video + kartlar görünür, video genişliği stretch ile düzeltildi ── */
 @media (max-width:768px) {
+  #sticky-section {
+    height: 280vh; /* scroll-scrub mesafesi korunuyor, sadece kısaltıldı */
+  }
   #sticky-inner {
     flex-direction: column;
-    height: auto;
-    padding: 100px 6vw 30px;
-    gap: 20px;
-    position: relative;
-    top: 0;
+    align-items: stretch;   /* ÖNEMLİ: center yerine stretch -> video genişliği çökmüyor */
+    height: calc(100vh - 80px);
+    padding: 90px 6vw 16px;
+    gap: 12px;
+    justify-content: flex-start;
+    overflow: hidden;
   }
-  #sticky-section {
-    height: auto;
+  #video-box {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
   }
-  .side-panel { display: none; }
-  #video-box { max-width: 100%; width: 100%; }
+  .side-panel {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    gap: 10px;
+    flex: 0 0 auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .info-card {
+    min-width: 150px;
+    flex-shrink: 0;
+    padding: 14px 16px;
+  }
+  .card-desc { display: none; } /* dar alanda sade görünüm */
 
   #stats { grid-template-columns: repeat(2,1fr); }
 
@@ -440,24 +458,22 @@ body {
   .proj-nav-btn, .proj-nav-btn.next { max-width: 100%; margin-left: 0; }
 }
 
-/* ── Mobil yatay (kısa yükseklik): sticky-scrub alanı çakışmayı önlemek için sabitlikten çıkar ── */
+/* ── Mobil yatay (kısa yükseklik): scroll-scrub mesafesine DOKUNMUYORUZ, sadece sığdırıyoruz ── */
 @media (max-height:500px) and (orientation:landscape) {
-  #sticky-section {
-    height: auto;
-    opacity: 1;
-    transform: none;
-  }
   #sticky-inner {
-    position: relative;
-    top: 0;
-    height: auto;
-    padding: 80px 4vw 16px;
+    align-items: stretch;
+    padding: 70px 3vw 10px;
+    gap: 14px;
   }
-  .side-panel { display: none; }
-  #video-box { max-width: 70%; margin: 0 auto; }
+  .side-panel {
+    width: 130px;
+  }
+  .info-card { padding: 12px 12px; }
+  .card-desc { font-size: 10px; line-height: 1.4; }
+  #video-box { flex: 1; max-width: 460px; }
 
   #stats {
-    padding: 24px 5vw;
+    padding: 20px 5vw;
     grid-template-columns: repeat(4,1fr);
   }
   #features { padding-top: 10px; }
