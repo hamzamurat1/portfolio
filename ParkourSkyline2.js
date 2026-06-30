@@ -1,6 +1,6 @@
 // ── Frame Sequence (canvas, scroll-scrub, cross-fade) ──
 // Ekran görüntülerini frames/ps2/frame_000.webp ... şeklinde bu klasöre koy.
-const FRAME_COUNT = 73; // gerçek kare sayına göre güncelle
+const FRAME_COUNT = 40; // gerçek kare sayına göre güncelle
 const FRAME_PATH  = i => `frames/ps2/frame_${String(i).padStart(3, '0')}.webp`;
 
 const SMOOTHNESS = 0.08;
@@ -29,9 +29,12 @@ function loadFrame(i, cb) {
   img.src = FRAME_PATH(i);
 }
 
-function preloadAll(i = 0) {
-  if (i >= FRAME_COUNT) return;
-  loadFrame(i, () => preloadAll(i + 1));
+// Tüm kareleri PARALEL (aynı anda) yükle — sıra ile bekleme yok,
+// böylece scroll sırasında henüz gelmemiş kareye takılma azalır.
+function preloadAll() {
+  for (let i = 0; i < FRAME_COUNT; i++) {
+    loadFrame(i);
+  }
 }
 
 function drawCover(img, cw, ch) {
