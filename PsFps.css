@@ -405,3 +405,60 @@ body {
 }
 
 </style>
+
+/* ── Mobil dikey: yan kartları gizle, video tam genişlik olsun ── */
+@media (max-width:768px) {
+  #sticky-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 100px 6vw 30px;
+    gap: 20px;
+    position: relative;
+    top: 0;
+  }
+  #sticky-section {
+    height: auto;
+  }
+  .side-panel { display: none; }
+  #video-box { max-width: 100%; width: 100%; }
+
+  #stats { grid-template-columns: repeat(2,1fr); }
+
+  .feature-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 24px 22px;
+  }
+  .feature-icon { margin: 0 auto; }
+
+  .shot-row, .shot-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  #proj-nav { flex-direction: column; }
+  .proj-nav-btn, .proj-nav-btn.next { max-width: 100%; margin-left: 0; }
+}
+
+/* ── Mobil yatay (kısa yükseklik): sticky-scrub alanı çakışmayı önlemek için sabitlikten çıkar ── */
+@media (max-height:500px) and (orientation:landscape) {
+  #sticky-section {
+    height: auto;
+    opacity: 1;
+    transform: none;
+  }
+  #sticky-inner {
+    position: relative;
+    top: 0;
+    height: auto;
+    padding: 80px 4vw 16px;
+  }
+  .side-panel { display: none; }
+  #video-box { max-width: 70%; margin: 0 auto; }
+
+  #stats {
+    padding: 24px 5vw;
+    grid-template-columns: repeat(4,1fr);
+  }
+  #features { padding-top: 10px; }
+}

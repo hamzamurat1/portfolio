@@ -179,3 +179,25 @@ html, body {
   .scene-img-wrap { max-width:340px; }
   #scene-dots { right:4vw; }
 }
+
+/* ── Yatay mobil (kısa yükseklik): görseller navbar/yazılarla çakışmasın ── */
+@media (max-height:500px) and (orientation:landscape) {
+  .scene {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    padding: 70px 5vw 16px;
+    gap: 4vw;
+    overflow: hidden;
+  }
+  .scene-img-wrap {
+    max-width: 280px;
+    max-height: calc(100vh - 90px);
+  }
+  .scene-img-wrap img { height: 100%; }
+  .scene-title { font-size: 20px; margin-bottom: 8px; }
+  .scene-desc { font-size: 12px; line-height: 1.5; }
+  .scene-eyebrow { margin-bottom: 6px; font-size: 9px; }
+  .scene-btn { margin-top: 12px; padding: 10px 20px; }
+  #navbar { padding: 10px 5vw; }
+  #scene-dots { right: 3vw; gap: 8px; }
+}

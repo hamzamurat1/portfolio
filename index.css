@@ -226,3 +226,29 @@ html, body {
   from { opacity:0; transform:translateY(16px); }
   to   { opacity:1; transform:translateY(0); }
 }
+
+/* ── Mobil yatay (k\u0131sa y\u00fckseklik): i\u00e7erik a\u015fa\u011f\u0131ya ta\u015fmas\u0131n, scroll edilebilsin ── */
+@media (max-height:480px) and (orientation:landscape) {
+  html, body { overflow:hidden; }
+
+  #left-panel {
+    top:64px;
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+    padding-right: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  #left-panel::-webkit-scrollbar { width:3px; }
+  #left-panel::-webkit-scrollbar-thumb { background:rgba(154,128,96,0.3); border-radius:2px; }
+
+  #eyebrow { margin-bottom:8px; }
+  #name { font-size:20px; margin-bottom:4px; }
+  #title-line { font-size:10px; margin-bottom:10px; }
+  #divider { margin-bottom:12px; }
+  #bio { font-size:13px; margin-bottom:12px; }
+  .info-row { margin-bottom:6px; }
+  #socials { margin-top:12px; }
+
+  #navbar { padding:10px 5vw; }
+  #footer { padding:8px 5vw; }
+}
