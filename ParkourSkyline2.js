@@ -1,6 +1,6 @@
 // ── Frame Sequence (canvas, scroll-scrub, cross-fade) ──
 // Ekran görüntülerini frames/ps2/frame_000.webp ... şeklinde bu klasöre koy.
-const FRAME_COUNT = 40; // gerçek kare sayına göre güncelle
+const FRAME_COUNT = 73; // SP2.mp4: 3.04s × 24fps, tüm kareler
 const FRAME_PATH  = i => `frames/ps2/frame_${String(i).padStart(3, '0')}.webp`;
 
 const SMOOTHNESS = 0.08;
