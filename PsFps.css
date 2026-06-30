@@ -411,34 +411,19 @@ body {
   #sticky-section {
     height: 280vh; /* scroll-scrub mesafesi korunuyor, sadece kısaltıldı */
   }
+  /* Yapıya (row / sticky / height) dokunmuyoruz, sadece küçültüyoruz —
+     tarayıcı penceresini küçültünce zaten düzgün çalışıyordu. */
   #sticky-inner {
-    flex-direction: column;
-    align-items: stretch;   /* ÖNEMLİ: center yerine stretch -> video genişliği çökmüyor */
-    height: calc(100vh - 80px);
-    padding: 90px 6vw 16px;
-    gap: 12px;
-    justify-content: flex-start;
-    overflow: hidden;
-  }
-  #video-box {
-    width: 100%;
-    max-width: 100%;
-    flex: 0 0 auto;
-  }
-  .side-panel {
-    flex-direction: row;
-    width: 100%;
-    overflow-x: auto;
+    padding: 90px 3vw 16px;
     gap: 10px;
-    flex: 0 0 auto;
-    -webkit-overflow-scrolling: touch;
   }
-  .info-card {
-    min-width: 150px;
-    flex-shrink: 0;
-    padding: 14px 16px;
-  }
-  .card-desc { display: none; } /* dar alanda sade görünüm */
+  .side-panel { width: 110px; }
+  .info-card { padding: 10px 12px; }
+  .card-icon { font-size: 16px; margin-bottom: 4px; }
+  .card-title { font-size: 10px; }
+  .card-desc { font-size: 9px; line-height: 1.4; }
+  .card-tag { font-size: 7px; padding: 2px 6px; }
+  #video-box { max-width: 100%; }
 
   #stats { grid-template-columns: repeat(2,1fr); }
 
@@ -460,21 +445,22 @@ body {
 
 /* ── Mobil yatay (kısa yükseklik): scroll-scrub mesafesine DOKUNMUYORUZ, sadece sığdırıyoruz ── */
 @media (max-height:500px) and (orientation:landscape) {
+  /* Burada da sadece küçültüyoruz, sticky/height yapısına dokunmuyoruz */
   #sticky-inner {
-    align-items: stretch;
-    padding: 70px 3vw 10px;
-    gap: 14px;
+    padding: 60px 3vw 8px;
+    gap: 10px;
   }
-  .side-panel {
-    width: 130px;
-  }
-  .info-card { padding: 12px 12px; }
-  .card-desc { font-size: 10px; line-height: 1.4; }
-  #video-box { flex: 1; max-width: 460px; }
+  .side-panel { width: 110px; }
+  .info-card { padding: 8px 10px; }
+  .card-icon { font-size: 14px; margin-bottom: 3px; }
+  .card-title { font-size: 9px; }
+  .card-desc { font-size: 8px; line-height: 1.3; }
+  .card-tag { font-size: 6px; padding: 2px 5px; margin-top: 4px; }
+  #video-box { max-width: 380px; }
 
   #stats {
-    padding: 20px 5vw;
+    padding: 16px 5vw;
     grid-template-columns: repeat(4,1fr);
   }
-  #features { padding-top: 10px; }
+  #features { padding-top: 8px; }
 }
