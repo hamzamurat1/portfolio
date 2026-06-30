@@ -70,17 +70,26 @@ function draw(value) {
   if (!imgHi) loadFrame(hi, () => draw(currentFrame));
 }
 
+// Mobil tarayıcılarda adres çubuğu kayarken window.innerHeight anılık değişip
+// scroll senkronunu bozuyordu. Yükseklik sadece yükleme/resize'da ölçülüp önbelleğe alınıyor.
+let cachedViewportH = window.innerHeight;
+
 function onScroll() {
   const rect = stickySection.getBoundingClientRect();
   const stickyH = stickySection.offsetHeight;
   const scrolled = -rect.top;
-  const pct = Math.max(0, Math.min(scrolled / (stickyH - window.innerHeight), 1));
+  const pct = Math.max(0, Math.min(scrolled / (stickyH - cachedViewportH), 1));
   targetFrame = pct * (FRAME_COUNT - 1);
   progressBar.style.width = (pct * 100) + '%';
 }
 
+function handleResize() {
+  cachedViewportH = window.innerHeight;
+  resizeCanvas();
+}
+
 window.addEventListener('scroll', onScroll, { passive: true });
-window.addEventListener('resize', resizeCanvas);
+window.addEventListener('resize', handleResize);
 
 function animate() {
   currentFrame += (targetFrame - currentFrame) * SMOOTHNESS;
