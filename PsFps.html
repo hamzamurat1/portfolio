@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Shoot FPS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="PsFps.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">HMT</a>
+  <div class="nav-links">
+    <a href="about.html" class="nav-link">About</a>
+    <a href="index.html" class="nav-link active">Projects</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-label">CROSS-PLATFORM · C++</div>
+  <h1 class="hero-title">Precision <em>Shoot</em></h1>
+  <p class="hero-sub">Süre İçinde Hedefi Vur, Skoru Topla · Publishing in Progress</p>
+</section>
+
+<div id="sticky-section">
+  <div id="sticky-inner">
+
+    <div class="side-panel" id="left-panel">
+      <div class="info-card">
+        <div class="card-icon">🎯</div>
+        <div class="card-title">Sabit & Hareketli Hedefler</div>
+        <div class="card-desc">Poligon hem duran hem de hareket eden hedeflerle farklı zorluk seviyeleri sunuyor.</div>
+        <span class="card-tag">Target Types</span>
+      </div>
+      <div class="info-card">
+        <div class="card-icon">⏱️</div>
+        <div class="card-title">Süreli Hedef Sistemi</div>
+        <div class="card-desc">Belirli bir süre içinde hedef sayısına veya puana ulaşmak gerekiyor.</div>
+        <span class="card-tag">Time Attack</span>
+      </div>
+      <div class="info-card">
+        <div class="card-icon">📱</div>
+        <div class="card-title">Android & iOS</div>
+        <div class="card-desc">Her iki mobil platform için optimize edilmiş dokunmatik kontrol şeması.</div>
+        <span class="card-tag">Mobile</span>
+      </div>
+    </div>
+
+    <div id="video-box">
+      <canvas id="game-canvas"></canvas>
+      <div id="progress-bar"></div>
+    </div>
+
+    <div class="side-panel" id="right-panel">
+      <div class="info-card right-card">
+        <div class="card-icon">🔫</div>
+        <div class="card-title">5+ Silah Seçeneği</div>
+        <div class="card-desc">Beşten fazla farklı silah seçeneği arasından oynanışa göre seçim yapılabiliyor.</div>
+        <span class="card-tag">Weapons</span>
+      </div>
+      <div class="info-card right-card">
+        <div class="card-icon">🏆</div>
+        <div class="card-title">Hedef & Puan Bazlı Kazanma</div>
+        <div class="card-desc">Belirlenen hedef sayısına veya puana ulaşan oyuncu turu başarıyla tamamlıyor.</div>
+        <span class="card-tag">Win Condition</span>
+      </div>
+      <div class="info-card right-card">
+        <div class="card-icon">⚙️</div>
+        <div class="card-title">Solo Geliştirme</div>
+        <div class="card-desc">Kod, denge ve atış mekaniği tek kişi tarafından yürütülüyor.</div>
+        <span class="card-tag">Role</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="scroll-hint" style="text-align:center; margin-top:-40px; margin-bottom:20px;">
+  <span class="scroll-line"></span> SCROLL TO EXPLORE <span class="scroll-line"></span>
+</div>
+
+<div id="stats">
+  <div class="stat-card">
+    <div class="stat-num">FPS</div>
+    <div class="stat-label">Genre</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">C++</div>
+    <div class="stat-label">Core Language</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">5+</div>
+    <div class="stat-label">Weapon Options</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">Android & iOS</div>
+    <div class="stat-label">Target Platforms</div>
+  </div>
+</div>
+
+<div id="features">
+  <div class="feature-card">
+    <div class="feature-icon">🎯</div>
+    <div class="feature-content">
+      <div class="feature-title">Sabit & Hareketli Hedef Çeşitliliği</div>
+      <div class="feature-desc">Poligon hem duran hem hareket eden hedefler içeriyor, bu da her turu farklı bir zorluk seviyesine taşıyor.</div>
+      <div class="feature-tags">
+        <span class="ftag">Static Targets</span>
+        <span class="ftag">Moving Targets</span>
+      </div>
+    </div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">⏱️</div>
+    <div class="feature-content">
+      <div class="feature-title">Süre İçinde Hedef Avı</div>
+      <div class="feature-desc">Belirli bir süre içinde yeterli hedef sayısına veya skora ulaşmak turun başarıyla tamamlanması için gerekiyor.</div>
+      <div class="feature-tags">
+        <span class="ftag">Time Limit</span>
+        <span class="ftag">Score Goal</span>
+      </div>
+    </div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🔫</div>
+    <div class="feature-content">
+      <div class="feature-title">Geniş Silah Yelpazesi</div>
+      <div class="feature-desc">Beşten fazla farklı silah seçeneği, oyuncuya oynanış tarzına göre seçim yapma özgürlüğü tanıyor.</div>
+      <div class="feature-tags">
+        <span class="ftag">5+ Weapons</span>
+        <span class="ftag">Loadout Variety</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="screenshots">
+
+  <div class="shot-row">
+    <div class="shot-img-wrap">
+      <img class="shot-img" src="frames/pictures/S3.png" alt="Mağaza Sistemi">
+    </div>
+    <div class="shot-text">
+      <div class="shot-tag">UI · Store System</div>
+      <h2 class="shot-title">Mağaza<br>Sistemi</h2>
+      <p class="shot-desc">Oyuncu, topladığı puanları kullanarak mağaza ekranından yeni silahlara ve içeriklere erişebiliyor.</p>
+      <div class="shot-tags">
+        <span class="stag">Store UI</span>
+        <span class="stag">Weapon Unlocks</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shot-row reverse">
+    <div class="shot-img-wrap">
+      <img class="shot-img" src="frames/pictures/S4.png" alt="Bölüm Menüsü">
+    </div>
+    <div class="shot-text">
+      <div class="shot-tag">UI · Level Select</div>
+      <h2 class="shot-title">Bölüm<br>Menüsü</h2>
+      <p class="shot-desc">Oyuncu bölüm menüsünden farklı atış senaryoları arasından seçim yaparak istediği turu başlatabiliyor.</p>
+      <div class="shot-tags">
+        <span class="stag">Level Select</span>
+        <span class="stag">Menu UI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shot-row">
+    <div class="shot-img-wrap">
+      <img class="shot-img" src="frames/pictures/S5.png" alt="Oyun İçi Görüntü">
+    </div>
+    <div class="shot-text">
+      <div class="shot-tag">Gameplay</div>
+      <h2 class="shot-title">Oyun İçi<br>Görüntü</h2>
+      <p class="shot-desc">Sabit ve hareketli hedeflerin yer aldığı atış poligonundan gerçek oynanış anı.</p>
+      <div class="shot-tags">
+        <span class="stag">Gameplay</span>
+        <span class="stag">Shooting Range</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="proj-nav">
+  <a href="ParkourSkyline2.html" class="proj-nav-btn prev">
+    <span class="proj-nav-arrow">←</span>
+    <div class="proj-nav-text">
+      <div class="proj-nav-label">Previous</div>
+      <div class="proj-nav-title">Parkour Skyline 2</div>
+    </div>
+  </a>
+  <a href="Erzurum.html" class="proj-nav-btn next">
+    <div class="proj-nav-text" style="text-align:right">
+      <div class="proj-nav-label">Next Project</div>
+      <div class="proj-nav-title">Erzurum</div>
+    </div>
+    <span class="proj-nav-arrow">→</span>
+  </a>
+</div>
+
+<footer id="footer">
+  <span class="footer-copy">© 2025 Hamza Murat Tortum</span>
+  <div class="footer-links">
+    <a href="https://github.com/hamzamurat1" target="_blank" class="footer-link">GitHub</a>
+    <a href="https://linkedin.com/in/hamza-murat-tortum" target="_blank" class="footer-link">LinkedIn</a>
+    <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link">Email</a>
+  </div>
+</footer>
+
+<script src="PsFps.js"></script>
+</body>
+</html>

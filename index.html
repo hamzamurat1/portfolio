@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamza Murat Tortum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css?v=2">
+</head>
+<body>
+
+  <!-- Video Background -->
+  <div id="bg-video-wrap">
+  <canvas id="bg-canvas"></canvas>
+  <div id="bg-overlay"></div>
+</div>
+
+  <!-- Loader -->
+  <div id="video-loader">
+    <div class="vl-bar-wrap"><div class="vl-bar"></div></div>
+  </div>
+
+  <!-- Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <a href="about.html" class="nav-tab active" data-tab="0">ABOUT</a>
+    <a href="ParkourSkyline2.html" class="nav-tab active" data-tab="1">PROJECTS</a>
+    <a href="Erzurum.html" class="nav-tab active" data-tab="2">ERZURUM</a>
+  </nav>
+
+  <!-- Left Panel -->
+  <div id="left-panel">
+    <div id="eyebrow">PORTFOLIO · 2026</div>
+    <div id="name">Hamza Murat <em>TORTUM</em></div>
+    <div id="title-line">DEVELOPER · GAME DESIGNER · 3D ARTIST</div>
+    <div id="divider"></div>
+
+    <!-- ABOUT -->
+    <div class="content-panel visible" id="panel-about">
+      <p id="bio">Management Information Systems student at Istanbul Beykent University. Passionate about game development, 3D design and web technologies.</p>
+      <div class="info-row"><span class="info-label">LOCATION</span><span class="info-value">Maltepe, Istanbul</span></div>
+      <div class="info-row"><span class="info-label">EDUCATION</span><span class="info-value">Beykent Univ. MIS · 2022–2026</span></div>
+      <div class="info-row"><span class="info-label">ENGINE</span><span class="info-value">Unreal Engine 5 · C++</span></div>
+      <div class="info-row"><span class="info-label">LANGUAGES</span><span class="info-value">Turkish · English B2 · German A2</span></div>
+      <div id="socials">
+        <a href="https://github.com/hamzamurat1" target="_blank" class="social-link">GITHUB</a>
+        <a href="#" class="social-link">LINKEDIN</a>
+        <a href="#" class="social-link">EMAIL</a>
+        <a href="contact.html" class="social-link contact-social">CONTACT</a>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="content-panel" id="panel-projects">
+      <div class="proj-list">
+        <div class="proj-item">
+          <div class="proj-name">Parkour Skyline</div>
+          <div class="proj-sub">3D Parkour · Unreal Engine · C++</div>
+          <span class="proj-badge">PUBLISHED · GOOGLE PLAY</span>
+        </div>
+        <a href="ParkourSkyline2.html" class="proj-item" style="text-decoration:none; color:inherit; display:block;">
+          <div class="proj-name">Parkour Skyline 2</div>
+          <div class="proj-sub">Enhanced Sequel · Unreal Engine · C++</div>
+          <span class="proj-badge">PUBLISHING IN PROGRESS</span>
+        </a>
+        <a href="PsFps.html" class="proj-item" style="text-decoration:none; color:inherit; display:block;">
+          <div class="proj-name">Precision Shoot FPS</div>
+          <div class="proj-sub">Shooting Range · Cross-platform</div>
+          <span class="proj-badge">PUBLISHING IN PROGRESS</span>
+        </a>
+        <div class="proj-item">
+          <div class="proj-name">Weekly Planner</div>
+          <div class="proj-sub">Node.js · Express · SQLite · PWA</div>
+          <span class="proj-badge">WEB APP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ERZURUM -->
+    <div class="content-panel" id="panel-erzurum">
+      <div class="erz-title">ERZURUM</div>
+      <div class="erz-sub">SON CEPHE</div>
+      <p class="erz-desc">1920'lerin alternatif Erzurum'unda geçen tek oyunculu FPS. Bir köylünün gözünden savaşın acımasızlığı.</p>
+      <div class="erz-tags">
+        <span class="erz-tag">UNREAL ENGINE 5</span>
+        <span class="erz-tag">PC · STEAM</span>
+        <span class="erz-tag">TEK OYUNCULU</span>
+      </div>
+      <div class="erz-tags">
+        <span class="erz-tag">6–8 SAAT</span>
+        <span class="erz-tag">PEGI 16+</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <span class="footer-copy">© 2025 HAMZA MURAT TORTUM</span>
+    <div class="footer-links">
+      <a href="#" class="footer-link">GITHUB</a>
+      <a href="#" class="footer-link">LINKEDIN</a>
+      <a href="#" class="footer-link">EMAIL</a>
+    </div>
+  </footer>
+
+  <script src="frames.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact - Hamza Murat Tortum</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="contact.css?v=5">
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">HMT</a>
+
+    <div class="nav-links">
+      <a href="about.html" class="nav-tab">ABOUT</a>
+      <a href="projects.html" class="nav-tab">PROJECTS</a>
+      <a href="erzurum.html" class="nav-tab">ERZURUM</a>
+      <a href="contact.html" class="nav-tab active">CONTACT</a>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <div class="eyebrow">GET IN TOUCH</div>
+      <h1 class="page-title">Let's <em>Connect</em></h1>
+      <p class="contact-text">I'm always open to new opportunities, collaborations and interesting projects. Feel free to reach out.</p>
+    </section>
+
+    <section class="contact-grid">
+      <div class="contact-cards">
+        <a href="mailto:hamzamurattortum1@gmail.com" class="contact-card">
+          <div class="card-icon">✉️</div>
+          <div class="card-body">
+            <span class="card-label">Email</span>
+            <span class="card-value">hamzamurattortum1@gmail.com</span>
+          </div>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="https://github.com/hamzamurat1" target="_blank" class="contact-card">
+          <div class="card-icon">💻</div>
+          <div class="card-body">
+            <span class="card-label">GitHub</span>
+            <span class="card-value">github.com/hamzamurat1</span>
+          </div>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="https://linkedin.com/in/hamza-murat-tortum" target="_blank" class="contact-card">
+          <div class="card-icon">🔗</div>
+          <div class="card-body">
+            <span class="card-label">LinkedIn</span>
+            <span class="card-value">Hamza Murat Tortum</span>
+          </div>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="https://hamzamurat1.github.io/portfolio/" target="_blank" class="contact-card">
+          <div class="card-icon">🌐</div>
+          <div class="card-body">
+            <span class="card-label">Portfolio</span>
+            <span class="card-value">hamzamurat1.github.io/portfolio</span>
+          </div>
+          <span class="card-arrow">→</span>
+        </a>
+      </div>
+
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xgoqnyov" method="POST">
+        <div class="input-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="input-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+        </div>
+
+        <button type="submit" class="send-btn" id="submit-btn">Send Message →</button>
+        <p class="form-note" id="form-success" style="display:none;">✅ Mesaj gönderildi! En kısa sürede dönüş yapacağım.</p>
+        <p class="form-note" id="form-error" style="display:none;">❌ Bir şeyler ters gitti. Lütfen tekrar deneyin.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-copy">© 2025 HAMZA MURAT TORTUM</span>
+
+    <div class="footer-links">
+      <a href="https://github.com/hamzamurat1" target="_blank">GITHUB</a>
+      <a href="https://linkedin.com/in/hamza-murat-tortum" target="_blank">LINKEDIN</a>
+      <a href="mailto:hamzamurattortum1@gmail.com">EMAIL</a>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>
