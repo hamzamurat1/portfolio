@@ -275,9 +275,10 @@ html, body {
 
   /* body'de overflow:hidden var; tek sütuna düşen 6 proje telefonda
      ekranı aşıyor ve kaydırılamıyordu. Panelin kendisi kaydırılabilir
-     oluyor (dar yatay ekran için aynısı yukarıda zaten yapılmış). */
+     oluyor (dar yatay ekran için aynısı yukarıda zaten yapılmış).
+     Yükseklik panelin yeni üst konumuna (50px) ve footer'a göre. */
   #left-panel {
-    max-height: calc(100vh - 150px);
+    max-height: calc(100vh - 105px);
     overflow-y: auto;
     padding-right: 10px;
     -webkit-overflow-scrolling: touch;
@@ -286,4 +287,19 @@ html, body {
   #left-panel::-webkit-scrollbar-thumb {
     background:rgba(154,128,96,0.3); border-radius:2px;
   }
+}
+
+/* ── Mobil: sol paneli yukari cek ──
+   Navbar telefonda kisaldi (lang.css); top:88px geride bosluk birakiyordu.
+   Icerik boylece ekranin ustune yaklasiyor ve daha fazlasi katlanmadan gorunuyor. */
+@media (max-width:768px) {
+  #left-panel { top:58px; left:4vw; }
+  #eyebrow    { margin-bottom:8px; }
+  #name       { margin-bottom:4px; }
+  #title-line { margin-bottom:12px; }
+  #divider    { margin-bottom:14px; }
+  #bio        { margin-bottom:16px; }
+}
+@media (max-width:420px) {
+  #left-panel { top:50px; left:3vw; }
 }

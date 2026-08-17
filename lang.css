@@ -39,11 +39,44 @@
 .lx[hidden] { display: none !important; }
 .lx.tr:not([hidden]) { display: block; }
 
+/* ── Mobil navbar ──
+   Turkce etiketler Ingilizcesinden uzun (Hakkimda / Projeler / Iletisim) ve
+   uzerine dil dugmesi de biniyor; telefonda sekmeler tasiyordu. Bu kurallar
+   her sayfada yuklendigi icin navbar sikistirmasi da burada duruyor. */
 @media (max-width: 768px) {
+  #navbar { padding: 14px 4vw; gap: 0; }
+  .nav-links { gap: 0; flex-wrap: nowrap; min-width: 0; }
+  .nav-tab,
+  .nav-link {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    padding: 7px 9px;
+    white-space: nowrap;
+  }
+  .nav-tab::after { left: 9px; right: 9px; }
   .lang-toggle {
     font-size: 9px;
-    padding: 6px 10px;
-    margin-left: 6px;
-    letter-spacing: 1.5px;
+    padding: 6px 9px;
+    margin-left: 2px;   /* Erzurum'a yakin dursun */
+    letter-spacing: 1.2px;
   }
+}
+
+/* Cok dar ekranlar — contact.html'de dort sekme + dugme var, en sikisik hal */
+@media (max-width: 420px) {
+  #navbar { padding: 12px 3vw; }
+  .nav-tab,
+  .nav-link {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    padding: 6px 6px;
+  }
+  .nav-tab::after { left: 6px; right: 6px; }
+  .lang-toggle {
+    font-size: 8px;
+    padding: 5px 7px;
+    margin-left: 1px;
+    letter-spacing: 0.8px;
+  }
+  .nav-logo { font-size: 11px; letter-spacing: 2px; }
 }
