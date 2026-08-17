@@ -68,7 +68,9 @@ form.addEventListener('submit', async (e) => {
   errorMsg.style.display = 'none';
 
   const originalText = submitBtn.innerHTML;
-  submitBtn.innerHTML = 'Gönderiliyor...';
+  var _tr = (function(){ try { return localStorage.getItem('hmt-lang') === 'tr'; }
+                       catch (e) { return false; } })();
+  submitBtn.innerHTML = _tr ? 'Gönderiliyor...' : 'Sending...';
   submitBtn.disabled = true;
 
   try {
@@ -81,9 +83,9 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       form.reset();
       successMsg.style.display = 'block';
-      submitBtn.innerHTML = 'Mesaj Gönderildi ✓';
+      submitBtn.innerHTML = _tr ? 'Mesaj Gönderildi ✓' : 'Message Sent ✓';
     } else {
-      throw new Error('Form gönderimi başarısız');
+      throw new Error('Form submission failed');
     }
   } catch (err) {
     errorMsg.style.display = 'block';

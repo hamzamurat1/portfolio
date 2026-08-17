@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css?v=2">
+  <link rel="stylesheet" href="lang.css">
 </head>
 <body>
 
@@ -27,30 +28,31 @@
 
   <!-- Navbar -->
   <nav id="navbar">
-    <a href="about.html" class="nav-tab active" data-tab="0">HAKKIMDA</a>
-    <a href="VakitTakibim.html" class="nav-tab active" data-tab="1">PROJELER</a>
+    <a href="about.html" class="nav-tab active" data-tab="0" data-tr="HAKKIMDA">ABOUT</a>
+    <a href="VakitTakibim.html" class="nav-tab active" data-tab="1" data-tr="PROJELER">PROJECTS</a>
     <a href="Erzurum.html" class="nav-tab active" data-tab="2">ERZURUM</a>
+    <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
   </nav>
 
   <!-- Left Panel -->
   <div id="left-panel">
-    <div id="eyebrow">PORTFOLYO · 2026</div>
+    <div id="eyebrow" data-tr="PORTFOLYO · 2026">PORTFOLIO · 2026</div>
     <div id="name">Hamza Murat <em>TORTUM</em></div>
-    <div id="title-line">GELİŞTİRİCİ · OYUN TASARIMCISI · 3B SANATÇI</div>
+    <div id="title-line" data-tr="GELİŞTİRİCİ · OYUN TASARIMCISI · 3B SANATÇI">DEVELOPER · GAME DESIGNER · 3D ARTIST</div>
     <div id="divider"></div>
 
     <!-- ABOUT -->
     <div class="content-panel visible" id="panel-about">
-      <p id="bio">İstanbul Beykent Üniversitesi Yönetim Bilişim Sistemleri öğrencisi. Oyun geliştirme, 3B tasarım ve web teknolojileri üzerine çalışıyorum.</p>
-      <div class="info-row"><span class="info-label">KONUM</span><span class="info-value">Maltepe, İstanbul</span></div>
-      <div class="info-row"><span class="info-label">EĞİTİM</span><span class="info-value">Beykent Üniv. YBS · 2022–2026</span></div>
-      <div class="info-row"><span class="info-label">MOTOR</span><span class="info-value">Unreal Engine 5 · C++</span></div>
-      <div class="info-row"><span class="info-label">DİLLER</span><span class="info-value">Türkçe · İngilizce B2 · Almanca A2</span></div>
+      <p id="bio" data-tr="İstanbul Beykent Üniversitesi Yönetim Bilişim Sistemleri öğrencisi. Oyun geliştirme, 3B tasarım ve web teknolojileri üzerine çalışıyorum.">Management Information Systems student at Istanbul Beykent University. Passionate about game development, 3D design and web technologies.</p>
+      <div class="info-row"><span class="info-label" data-tr="KONUM">LOCATION</span><span class="info-value" data-tr="Maltepe, İstanbul">Maltepe, Istanbul</span></div>
+      <div class="info-row"><span class="info-label" data-tr="EĞİTİM">EDUCATION</span><span class="info-value" data-tr="Beykent Üniv. YBS · 2022–2026">Beykent Univ. MIS · 2022–2026</span></div>
+      <div class="info-row"><span class="info-label" data-tr="MOTOR">ENGINE</span><span class="info-value">Unreal Engine 5 · C++</span></div>
+      <div class="info-row"><span class="info-label" data-tr="DİLLER">LANGUAGES</span><span class="info-value" data-tr="Türkçe · İngilizce B2 · Almanca A2">Turkish · English B2 · German A2</span></div>
       <div id="socials">
         <a href="https://github.com/hamzamurat1" target="_blank" class="social-link">GITHUB</a>
         <a href="https://www.linkedin.com/in/hamza-murat-tortum" target="_blank" class="social-link">LINKEDIN</a>
-        <a href="mailto:hamzamurattortum1@gmail.com" class="social-link">E-POSTA</a>
-        <a href="contact.html" class="social-link contact-social">İLETİŞİM</a>
+        <a href="mailto:hamzamurattortum1@gmail.com" class="social-link" data-tr="E-POSTA">EMAIL</a>
+        <a href="contact.html" class="social-link contact-social" data-tr="İLETİŞİM">CONTACT</a>
       </div>
     </div>
 
@@ -59,33 +61,33 @@
       <div class="proj-list">
         <a href="VakitTakibim.html" class="proj-item" style="text-decoration:none; color:inherit; display:block;">
           <div class="proj-name">Vakit Takibim</div>
-          <div class="proj-sub">Çevrimdışı Namaz Vakitleri · Flutter · Android &amp; iOS</div>
-          <span class="proj-badge">YAYIN SÜRECİNDE</span>
+          <div class="proj-sub" data-tr="Çevrimdışı Namaz Vakitleri · Flutter · Android &amp;amp; iOS">Offline Prayer Times · Flutter · Android &amp; iOS</div>
+          <span class="proj-badge" data-tr="YAYIN SÜRECİNDE">PUBLISHING IN PROGRESS</span>
         </a>
         <a href="BreadBlade.html" class="proj-item" style="text-decoration:none; color:inherit; display:block;">
           <div class="proj-name">Bread &amp; Blade</div>
-          <div class="proj-sub">Idle Üretim + Dalga Savunması · Unreal Engine 5 · C++</div>
-          <span class="proj-badge">PROTOTİP AŞAMASINDA</span>
+          <div class="proj-sub" data-tr="Idle Üretim + Dalga Savunması · Unreal Engine 5 · C++">Idle Production + Wave Defense · Unreal Engine 5 · C++</div>
+          <span class="proj-badge" data-tr="PROTOTİP AŞAMASINDA">PROTOTYPE IN PROGRESS</span>
         </a>
         <div class="proj-item">
           <div class="proj-name">Parkour Skyline</div>
-          <div class="proj-sub">3B Parkur · Unreal Engine · C++</div>
-          <span class="proj-badge">YAYINDA · GOOGLE PLAY</span>
+          <div class="proj-sub" data-tr="3B Parkur · Unreal Engine · C++">3D Parkour · Unreal Engine · C++</div>
+          <span class="proj-badge" data-tr="YAYINDA · GOOGLE PLAY">PUBLISHED · GOOGLE PLAY</span>
         </div>
         <a href="ParkourSkyline2.html" class="proj-item" style="text-decoration:none; color:inherit; display:block;">
           <div class="proj-name">Parkour Skyline 2</div>
-          <div class="proj-sub">Yenilenmiş Devam Oyunu · Unreal Engine · C++</div>
-          <span class="proj-badge">YAYIN SÜRECİNDE</span>
+          <div class="proj-sub" data-tr="Yenilenmiş Devam Oyunu · Unreal Engine · C++">Enhanced Sequel · Unreal Engine · C++</div>
+          <span class="proj-badge" data-tr="YAYIN SÜRECİNDE">PUBLISHING IN PROGRESS</span>
         </a>
         <a href="PsFps.html" class="proj-item" style="text-decoration:none; color:inherit; display:block;">
           <div class="proj-name">Precision Shoot FPS</div>
-          <div class="proj-sub">Atış Poligonu · Çoklu Platform</div>
-          <span class="proj-badge">YAYIN SÜRECİNDE</span>
+          <div class="proj-sub" data-tr="Atış Poligonu · Çoklu Platform">Shooting Range · Cross-platform</div>
+          <span class="proj-badge" data-tr="YAYIN SÜRECİNDE">PUBLISHING IN PROGRESS</span>
         </a>
         <a href="WeeklyPlanner.html" class="proj-item" style="text-decoration:none; color:inherit; display:block;">
-          <div class="proj-name">Haftalık Planlayıcı</div>
+          <div class="proj-name" data-tr="Haftalık Planlayıcı">Weekly Planner</div>
           <div class="proj-sub">Node.js · Express · SQLite · PWA</div>
-          <span class="proj-badge">WEB UYGULAMASI</span>
+          <span class="proj-badge" data-tr="WEB UYGULAMASI">WEB APP</span>
         </a>
       </div>
     </div>
@@ -93,15 +95,15 @@
     <!-- ERZURUM -->
     <div class="content-panel" id="panel-erzurum">
       <div class="erz-title">ERZURUM</div>
-      <div class="erz-sub">SON CEPHE</div>
-      <p class="erz-desc">1920'lerin alternatif Erzurum'unda geçen tek oyunculu FPS. Bir köylünün gözünden savaşın acımasızlığı.</p>
+      <div class="erz-sub" data-tr="SON CEPHE">THE LAST FRONT</div>
+      <p class="erz-desc" data-tr="1920'lerin alternatif Erzurum'unda geçen tek oyunculu FPS. Bir köylünün gözünden savaşın acımasızlığı.">A single-player FPS set in an alternate 1920s Erzurum. The brutality of war through a villager's eyes.</p>
       <div class="erz-tags">
         <span class="erz-tag">UNREAL ENGINE 5</span>
         <span class="erz-tag">PC · STEAM</span>
-        <span class="erz-tag">TEK OYUNCULU</span>
+        <span class="erz-tag" data-tr="TEK OYUNCULU">SINGLE PLAYER</span>
       </div>
       <div class="erz-tags">
-        <span class="erz-tag">6–8 SAAT</span>
+        <span class="erz-tag" data-tr="6–8 SAAT">6–8 HOURS</span>
         <span class="erz-tag">PEGI 16+</span>
       </div>
     </div>
@@ -113,11 +115,12 @@
     <div class="footer-links">
       <a href="https://github.com/hamzamurat1" target="_blank" class="footer-link">GITHUB</a>
       <a href="https://www.linkedin.com/in/hamza-murat-tortum" target="_blank" class="footer-link">LINKEDIN</a>
-      <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link">E-POSTA</a>
+      <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link" data-tr="E-POSTA">EMAIL</a>
     </div>
   </footer>
 
   <script src="frames.js"></script>
   <script src="index.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>

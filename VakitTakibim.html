@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vakit Takibim</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="VakitTakibim.css">
+<link rel="stylesheet" href="lang.css">
 </head>
 <body>
 
 <nav id="navbar">
   <a class="nav-logo" href="index.html">HMT</a>
   <div class="nav-links">
-    <a href="about.html" class="nav-link">Hakkımda</a>
-    <a href="VakitTakibim.html" class="nav-link active">Projeler</a>
+    <a href="about.html" class="nav-link" data-tr="Hakkımda">About</a>
+    <a href="VakitTakibim.html" class="nav-link active" data-tr="Projeler">Projects</a>
     <a href="Erzurum.html" class="nav-link">Erzurum</a>
-  </div>
+    <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
+    </div>
 </nav>
 
 <!-- ── ÜST PROJE GEÇİŞİ ── -->
 <div id="proj-nav-top">
-  <a href="index.html" class="pn-mini prev">← Tüm projeler</a>
+  <a href="index.html" class="pn-mini prev" data-tr="← Tüm projeler">← All projects</a>
   <a href="BreadBlade.html" class="pn-mini next">Bread &amp; Blade →</a>
 </div>
 
@@ -31,41 +33,41 @@
     <div>
       <h1 class="app-name">Vakit <em>Takibim</em></h1>
       <div class="app-dev">Hamza Murat Tortum</div>
-      <div class="app-cat">Yaşam Tarzı · Flutter · Android &amp; iOS</div>
+      <div class="app-cat" data-tr="Yaşam Tarzı · Flutter · Android &amp;amp; iOS">Lifestyle · Flutter · Android &amp; iOS</div>
     </div>
   </div>
 
   <div id="store-strip">
     <div class="strip-cell">
       <div class="strip-num">%100</div>
-      <div class="strip-label">Çevrimdışı Vakit</div>
+      <div class="strip-label" data-tr="Çevrimdışı Vakit">Offline Times</div>
     </div>
     <div class="strip-cell">
       <div class="strip-num">23</div>
-      <div class="strip-label">Hesaplama Yöntemi</div>
+      <div class="strip-label" data-tr="Hesaplama Yöntemi">Calculation Methods</div>
     </div>
     <div class="strip-cell">
       <div class="strip-num">3</div>
-      <div class="strip-label">Dil · TR EN AR</div>
+      <div class="strip-label" data-tr="Dil · TR EN AR">Languages · TR EN AR</div>
     </div>
     <div class="strip-cell">
       <div class="strip-num">3+</div>
-      <div class="strip-label">İçerik Derecesi</div>
+      <div class="strip-label" data-tr="İçerik Derecesi">Content Rating</div>
     </div>
   </div>
 
   <div id="cta">
-    <span class="cta-btn primary">Yayına Hazırlanıyor</span>
-    <a href="contact.html" class="cta-btn ghost">İletişime Geç</a>
-    <span class="cta-note">Mağaza yayını tamamlandığında bu alana indirme bağlantısı gelecek.</span>
+    <span class="cta-btn primary" data-tr="Yayına Hazırlanıyor">Preparing for Release</span>
+    <a href="contact.html" class="cta-btn ghost" data-tr="İletişime Geç">Get in Touch</a>
+    <span class="cta-note" data-tr="Mağaza yayını tamamlandığında bu alana indirme bağlantısı gelecek.">A download link will appear here once the store release is complete.</span>
   </div>
 </section>
 
 <!-- ── SCREENSHOT GALLERY ── -->
 <section id="gallery-section">
   <div class="section-head">
-    <h2 class="section-title">Ekran görüntüleri</h2>
-    <span class="section-hint">Kaydır · Büyütmek için tıkla</span>
+    <h2 class="section-title" data-tr="Ekran görüntüleri">Screenshots</h2>
+    <span class="section-hint" data-tr="Kaydır · Büyütmek için tıkla">Scroll · Click to enlarge</span>
   </div>
 
   <div class="gallery-wrap">
@@ -106,46 +108,83 @@
 <!-- ── ABOUT THIS APP ── -->
 <section id="about-app">
   <div class="section-head" style="padding-left:0; padding-right:0; max-width:none;">
-    <h2 class="section-title">Bu uygulama hakkında</h2>
+    <h2 class="section-title" data-tr="Bu uygulama hakkında">About this app</h2>
   </div>
   <div class="about-box">
-    <p>
-      Vakit Takibim, namaz vakitlerini <strong>cihazın kendisinde astronomik olarak hesaplayan</strong>
-      bir Flutter uygulaması. Vakitler bir sunucudan çekilmiyor; <strong>adhan_dart</strong> ile
-      konum ve tarihten yerel olarak üretiliyor. Yani uçak modunda, yurt dışında, internetsiz bir
-      dağ köyünde de doğru vakti gösteriyor. İnternet yalnız üç şey için kullanılıyor:
-      hava durumu, şehir arama ve yakın camiler haritası.
-    </p>
-    <div id="about-more">
+    <div class="lx en">
       <p>
-        Uygulamanın ikinci ekseni <strong>alışkanlık takibi</strong>. Kılınan vakitler
-        işaretleniyor ve iki ayrı seri işliyor: günde en az bir vakitle süren normal seri ve
-        beş vaktin tamamıyla süren <strong>Altın Seri</strong>. Her serinin haftada bir kez
-        otomatik kullanılan bir dondurma hakkı var — bir günü kaçırmak aylık emeği silmiyor.
-        Namaz günü gece yarısında değil <strong>imsakta</strong> dönüyor; imsaktan önce yapılan
-        işaretlemeler önceki güne yazılıyor.
-      </p>
-      <p>
-        Bildirimler tarafında iş, "vakti gelince çal"dan daha derin: kesin alarmlı vakit
-        bildirimleri, ayarlanabilir "N dakika önce" hatırlatması, gün sonunda hiç vakit
-        işaretlenmediyse seri uyarısı ve <strong>uygulama kapalıyken de çalışması için
-        4 gün ileriye zamanlama</strong>. Cihaz yeniden başlatıldığında zamanlamalar bir
-        reboot receiver ile yeniden kuruluyor.
-      </p>
-      <p>
-        Vakit ekranının yanında ayrı bir araç seti var: Kuran okuma, tefsir ve radyo, hatim
-        takibi, zikirmatik, zekat hesaplama, dualar, hutbe, dini günler, hicri tarih çevirici,
-        Esmaül Hüsna, kaza takibi ve adım adım ibadet rehberleri. Ana ekrana ise iki widget
-        çıkıyor: haftalık noktalarla seri widget'ı ve saniye saniye işleyen vakit sayacı —
-        ikisi de uygulamanın temasına duyarlı.
+        Vakit Takibim is a Flutter app that computes prayer times
+        <strong>astronomically on the device itself</strong>. Times are not fetched from a
+        server; <strong>adhan_dart</strong> derives them locally from location and date. That
+        means it shows the correct time in airplane mode, abroad, or in a mountain village with
+        no connection. The internet is used for three things only: weather, city search and the
+        nearby-mosques map.
       </p>
     </div>
-    <button id="about-toggle">Daha fazla ↓</button>
+    <div class="lx tr" hidden>
+      <p>
+        Vakit Takibim, namaz vakitlerini <strong>cihazın kendisinde astronomik olarak hesaplayan</strong>
+        bir Flutter uygulaması. Vakitler bir sunucudan çekilmiyor; <strong>adhan_dart</strong> ile
+        konum ve tarihten yerel olarak üretiliyor. Yani uçak modunda, yurt dışında, internetsiz bir
+        dağ köyünde de doğru vakti gösteriyor. İnternet yalnız üç şey için kullanılıyor:
+        hava durumu, şehir arama ve yakın camiler haritası.
+      </p>
+    </div>
+    <div id="about-more">
+      <div class="lx en">
+        <p>
+          The app's second axis is <strong>habit tracking</strong>. Completed prayers are marked
+          and two separate streaks run: a normal streak that survives on at least one prayer per
+          day, and a <strong>Golden Streak</strong> that requires all five. Each streak has one
+          freeze per week, spent automatically — missing a single day does not wipe out a month
+          of effort. The prayer day turns over at <strong>imsak</strong>, not midnight, so a
+          prayer marked before dawn is credited to the previous day.
+        </p>
+        <p>
+          Notifications go deeper than "ring when it's time": exact-alarm prayer notifications,
+          an adjustable "N minutes before" reminder, an end-of-day streak warning if nothing was
+          marked, and <strong>scheduling four days ahead so it keeps firing while the app is
+          closed</strong>. After a device reboot the schedules are rebuilt by a reboot receiver.
+        </p>
+        <p>
+          Alongside the prayer screen there is a separate toolset: Quran reading, tafsir and
+          radio, hatim tracking, a dhikr counter, zakat calculation, prayers, khutbah, religious
+          days, a Hijri date converter, Asma ul-Husna, missed-prayer tracking and step-by-step
+          worship guides. Two home-screen widgets ship as well: a streak widget with weekly dots
+          and a prayer countdown ticking second by second — both follow the app's theme.
+        </p>
+      </div>
+      <div class="lx tr" hidden>
+        <p>
+          Uygulamanın ikinci ekseni <strong>alışkanlık takibi</strong>. Kılınan vakitler
+          işaretleniyor ve iki ayrı seri işliyor: günde en az bir vakitle süren normal seri ve
+          beş vaktin tamamıyla süren <strong>Altın Seri</strong>. Her serinin haftada bir kez
+          otomatik kullanılan bir dondurma hakkı var — bir günü kaçırmak aylık emeği silmiyor.
+          Namaz günü gece yarısında değil <strong>imsakta</strong> dönüyor; imsaktan önce yapılan
+          işaretlemeler önceki güne yazılıyor.
+        </p>
+        <p>
+          Bildirimler tarafında iş, "vakti gelince çal"dan daha derin: kesin alarmlı vakit
+          bildirimleri, ayarlanabilir "N dakika önce" hatırlatması, gün sonunda hiç vakit
+          işaretlenmediyse seri uyarısı ve <strong>uygulama kapalıyken de çalışması için
+          4 gün ileriye zamanlama</strong>. Cihaz yeniden başlatıldığında zamanlamalar bir
+          reboot receiver ile yeniden kuruluyor.
+        </p>
+        <p>
+          Vakit ekranının yanında ayrı bir araç seti var: Kuran okuma, tefsir ve radyo, hatim
+          takibi, zikirmatik, zekat hesaplama, dualar, hutbe, dini günler, hicri tarih çevirici,
+          Esmaül Hüsna, kaza takibi ve adım adım ibadet rehberleri. Ana ekrana ise iki widget
+          çıkıyor: haftalık noktalarla seri widget'ı ve saniye saniye işleyen vakit sayacı —
+          ikisi de uygulamanın temasına duyarlı.
+        </p>
+      </div>
+    </div>
+    <button id="about-toggle" data-tr="Daha fazla ↓">Read more ↓</button>
 
     <div class="chip-row">
       <span class="chip">Flutter</span>
       <span class="chip">Dart</span>
-      <span class="chip">Çevrimdışı</span>
+      <span class="chip" data-tr="Çevrimdışı">Offline</span>
       <span class="chip">adhan_dart</span>
       <span class="chip">Kotlin Widget</span>
       <span class="chip">Firebase</span>
@@ -159,89 +198,79 @@
 <section id="features">
   <div class="feature-card">
     <div class="feature-icon">🕌</div>
-    <div class="feature-title">Çevrimdışı vakit hesabı</div>
-    <div class="feature-desc">
-      Vakitler sunucudan değil cihazdan geliyor. 23 hesaplama yöntemi (Diyanet, ISNA ve
-      diğerleri) ile Şafii/Hanefi mezhep seçimi arasından seçim yapılıyor; konum otomatik
-      ya da elle verilebiliyor.
+    <div class="feature-title" data-tr="Çevrimdışı vakit hesabı">Offline prayer-time calculation</div>
+    <div class="feature-desc" data-tr="Vakitler sunucudan değil cihazdan geliyor. 23 hesaplama yöntemi (Diyanet, ISNA ve diğerleri) ile Şafii/Hanefi mezhep seçimi arasından seçim yapılıyor; konum otomatik ya da elle verilebiliyor.">
+      Times come from the device, not a server. You pick among 23 calculation methods (Diyanet, ISNA and others) and the Shafi'i/Hanafi school; location can be automatic or entered by hand.
     </div>
     <div class="feature-tags">
       <span class="ftag">adhan_dart</span>
-      <span class="ftag">23 yöntem</span>
-      <span class="ftag">İnternetsiz</span>
+      <span class="ftag" data-tr="23 yöntem">23 methods</span>
+      <span class="ftag" data-tr="İnternetsiz">No internet</span>
     </div>
   </div>
 
   <div class="feature-card">
     <div class="feature-icon">🔔</div>
-    <div class="feature-title">Kapalıyken de çalan bildirim</div>
-    <div class="feature-desc">
-      Kesin alarmlı vakit bildirimleri, "N dakika önce" hatırlatması ve 4 gün ileriye
-      zamanlama. Inexact fallback ve reboot receiver ile uygulama kapalıyken ya da cihaz
-      yeniden başladıktan sonra da ayakta kalıyor.
+    <div class="feature-title" data-tr="Kapalıyken de çalan bildirim">Notifications that fire while closed</div>
+    <div class="feature-desc" data-tr="Kesin alarmlı vakit bildirimleri, &quot;N dakika önce&quot; hatırlatması ve 4 gün ileriye zamanlama. Inexact fallback ve reboot receiver ile uygulama kapalıyken ya da cihaz yeniden başladıktan sonra da ayakta kalıyor.">
+      Exact-alarm prayer notifications, an "N minutes before" reminder and scheduling four days ahead. An inexact fallback and a reboot receiver keep it alive while the app is closed or after the device restarts.
     </div>
     <div class="feature-tags">
       <span class="ftag">Exact alarm</span>
       <span class="ftag">Reboot receiver</span>
-      <span class="ftag">Ses / sessiz</span>
+      <span class="ftag" data-tr="Ses / sessiz">Sound / silent</span>
     </div>
   </div>
 
   <div class="feature-card">
     <div class="feature-icon">🔥</div>
-    <div class="feature-title">Çift seri ve dondurma hakkı</div>
-    <div class="feature-desc">
-      Günde bir vakitle süren normal seri, beş vaktin tamamıyla süren Altın Seri. Her seride
-      haftada bir kez otomatik kullanılan dondurma hakkı var. Gün imsaktan imsağa sayılıyor,
-      böylece gece kılınan yatsı doğru güne yazılıyor.
+    <div class="feature-title" data-tr="Çift seri ve dondurma hakkı">Dual streaks and freezes</div>
+    <div class="feature-desc" data-tr="Günde bir vakitle süren normal seri, beş vaktin tamamıyla süren Altın Seri. Her seride haftada bir kez otomatik kullanılan dondurma hakkı var. Gün imsaktan imsağa sayılıyor, böylece gece kılınan yatsı doğru güne yazılıyor.">
+      A normal streak that survives on one prayer a day, and a Golden Streak that requires all five. Each has one freeze per week, spent automatically. The day runs imsak to imsak, so a late-night isha lands on the right day.
     </div>
     <div class="feature-tags">
-      <span class="ftag">Altın Seri</span>
-      <span class="ftag">Seri dondurma</span>
-      <span class="ftag">İmsak sınırı</span>
+      <span class="ftag" data-tr="Altın Seri">Golden Streak</span>
+      <span class="ftag" data-tr="Seri dondurma">Streak freeze</span>
+      <span class="ftag" data-tr="İmsak sınırı">Imsak boundary</span>
     </div>
   </div>
 
   <div class="feature-card">
     <div class="feature-icon">🧭</div>
-    <div class="feature-title">Pusula, imsakiye, camiler</div>
-    <div class="feature-desc">
-      Manyetik sapma düzeltmeli Kâbe pusulası ve mesafe; hicri tarihli 30 günlük imsakiye;
-      harita üzerinde konuma en yakın camiler ve yürüme mesafeleri.
+    <div class="feature-title" data-tr="Pusula, imsakiye, camiler">Compass, calendar, mosques</div>
+    <div class="feature-desc" data-tr="Manyetik sapma düzeltmeli Kâbe pusulası ve mesafe; hicri tarihli 30 günlük imsakiye; harita üzerinde konuma en yakın camiler ve yürüme mesafeleri.">
+      A Kaaba compass with magnetic-declination correction plus distance; a 30-day prayer calendar with Hijri dates; nearest mosques on a map with walking distances.
     </div>
     <div class="feature-tags">
-      <span class="ftag">Kıble</span>
-      <span class="ftag">Hicri takvim</span>
-      <span class="ftag">Harita</span>
+      <span class="ftag" data-tr="Kıble">Qibla</span>
+      <span class="ftag" data-tr="Hicri takvim">Hijri calendar</span>
+      <span class="ftag" data-tr="Harita">Map</span>
     </div>
   </div>
 
   <div class="feature-card">
     <div class="feature-icon">📖</div>
-    <div class="feature-title">Vaktin yanında bir araç seti</div>
-    <div class="feature-desc">
-      Kuran okuma, tefsir ve radyo, hatim takibi, zikirmatik, zekat hesaplama, dualar, hutbe,
-      dini günler, hicri çevirici, Esmaül Hüsna, kaza takibi ve adım adım ibadet rehberleri.
+    <div class="feature-title" data-tr="Vaktin yanında bir araç seti">A toolset beside the times</div>
+    <div class="feature-desc" data-tr="Kuran okuma, tefsir ve radyo, hatim takibi, zikirmatik, zekat hesaplama, dualar, hutbe, dini günler, hicri çevirici, Esmaül Hüsna, kaza takibi ve adım adım ibadet rehberleri.">
+      Quran reading, tafsir and radio, hatim tracking, a dhikr counter, zakat calculation, prayers, khutbah, religious days, a Hijri converter, Asma ul-Husna, missed-prayer tracking and step-by-step worship guides.
     </div>
     <div class="feature-tags">
-      <span class="ftag">Kuran &amp; tefsir</span>
-      <span class="ftag">Zekat</span>
-      <span class="ftag">Kaza takibi</span>
+      <span class="ftag" data-tr="Kuran &amp;amp; tefsir">Quran &amp; tafsir</span>
+      <span class="ftag" data-tr="Zekat">Zakat</span>
+      <span class="ftag" data-tr="Kaza takibi">Missed prayers</span>
     </div>
   </div>
 
   <div class="feature-card">
     <div class="feature-icon">📱</div>
-    <div class="feature-title">Ana ekran widget'ları</div>
-    <div class="feature-desc">
-      2x2 seri widget'ı (altın seri + alev serisi + haftalık beşgen noktalar, dondurulan günde
-      kar tanesi) ve saniye saniye işleyen vakit sayacı. Kotlin RemoteViews ile yazıldı, ikisi
-      de uygulama temasına duyarlı liquid glass görünümde.
+    <div class="feature-title" data-tr="Ana ekran widget'ları">Home-screen widgets</div>
+    <div class="feature-desc" data-tr="2x2 seri widget'ı (altın seri + alev serisi + haftalık beşgen noktalar, dondurulan günde kar tanesi) ve saniye saniye işleyen vakit sayacı. Kotlin RemoteViews ile yazıldı, ikisi de uygulama temasına duyarlı liquid glass görünümde.">
+      A 2x2 streak widget (golden streak + flame streak + weekly pentagon dots, a snowflake on a frozen day) and a prayer countdown ticking second by second. Written with Kotlin RemoteViews, both in a theme-aware liquid glass look.
     </div>
     <div class="feature-tags">
       <span class="ftag">home_widget</span>
       <span class="ftag">RemoteViews</span>
-      <span class="ftag">Tema duyarlı</span>
+      <span class="ftag" data-tr="Tema duyarlı">Theme-aware</span>
     </div>
   </div>
 </section>
@@ -249,44 +278,44 @@
 <!-- ── ADDITIONAL INFO ── -->
 <section id="info">
   <div class="section-head" style="padding-left:0; padding-right:0; max-width:none;">
-    <h2 class="section-title">Ek bilgiler</h2>
+    <h2 class="section-title" data-tr="Ek bilgiler">Additional information</h2>
   </div>
   <div class="info-table">
     <div class="info-row">
-      <div class="info-key">Sürüm</div>
-      <div class="info-val">1.1.0 (build 19) · yayına hazırlık aşamasında</div>
+      <div class="info-key" data-tr="Sürüm">Version</div>
+      <div class="info-val" data-tr="1.1.0 (build 19) · yayına hazırlık aşamasında">1.1.0 (build 19) · preparing for store release</div>
     </div>
     <div class="info-row">
       <div class="info-key">Platform</div>
-      <div class="info-val">Android ve iOS · tek Flutter kod tabanı</div>
+      <div class="info-val" data-tr="Android ve iOS · tek Flutter kod tabanı">Android and iOS · one Flutter codebase</div>
     </div>
     <div class="info-row">
-      <div class="info-key">Vakit hesabı</div>
-      <div class="info-val">adhan_dart · cihaz üzerinde astronomik hesap, sunucu yok</div>
+      <div class="info-key" data-tr="Vakit hesabı">Time calculation</div>
+      <div class="info-val" data-tr="adhan_dart · cihaz üzerinde astronomik hesap, sunucu yok">adhan_dart · astronomical calculation on device, no server</div>
     </div>
     <div class="info-row">
-      <div class="info-key">Bildirim altyapısı</div>
+      <div class="info-key" data-tr="Bildirim altyapısı">Notification stack</div>
       <div class="info-val">flutter_local_notifications · exact alarm + inexact fallback + reboot receiver</div>
     </div>
     <div class="info-row">
-      <div class="info-key">Widget köprüsü</div>
+      <div class="info-key" data-tr="Widget köprüsü">Widget bridge</div>
       <div class="info-val">home_widget + Kotlin RemoteViews</div>
     </div>
     <div class="info-row">
-      <div class="info-key">Durum yönetimi</div>
-      <div class="info-val">Global ValueNotifier denetleyicileri + shared_preferences</div>
+      <div class="info-key" data-tr="Durum yönetimi">State management</div>
+      <div class="info-val" data-tr="Global ValueNotifier denetleyicileri + shared_preferences">Global ValueNotifier controllers + shared_preferences</div>
     </div>
     <div class="info-row">
       <div class="info-key">Test</div>
-      <div class="info-val">Seri mantığı, gün dönümü ve yedekleme için birim testleri</div>
+      <div class="info-val" data-tr="Seri mantığı, gün dönümü ve yedekleme için birim testleri">Unit tests for streak logic, day rollover and backup</div>
     </div>
     <div class="info-row">
-      <div class="info-key">Diller</div>
-      <div class="info-val">Türkçe · English · العربية</div>
+      <div class="info-key" data-tr="Diller">Languages</div>
+      <div class="info-val" data-tr="Türkçe · English · العربية">Turkish · English · العربية</div>
     </div>
     <div class="info-row">
-      <div class="info-key">Geliştirici</div>
-      <div class="info-val">Hamza Murat Tortum · solo geliştirme (kod, tasarım, mağaza görselleri)</div>
+      <div class="info-key" data-tr="Geliştirici">Developer</div>
+      <div class="info-val" data-tr="Hamza Murat Tortum · solo geliştirme (kod, tasarım, mağaza görselleri)">Hamza Murat Tortum · solo development (code, design, store assets)</div>
     </div>
   </div>
 </section>
@@ -295,13 +324,13 @@
   <a href="index.html" class="proj-nav-btn prev">
     <span class="proj-nav-arrow">←</span>
     <div class="proj-nav-text">
-      <div class="proj-nav-label">Önceki</div>
-      <div class="proj-nav-title">Projelere Dön</div>
+      <div class="proj-nav-label" data-tr="Önceki">Previous</div>
+      <div class="proj-nav-title" data-tr="Projelere Dön">Back to Projects</div>
     </div>
   </a>
   <a href="BreadBlade.html" class="proj-nav-btn next">
     <div class="proj-nav-text" style="text-align:right">
-      <div class="proj-nav-label">Sonraki Proje</div>
+      <div class="proj-nav-label" data-tr="Sonraki Proje">Next Project</div>
       <div class="proj-nav-title">Bread &amp; Blade</div>
     </div>
     <span class="proj-nav-arrow">→</span>
@@ -313,10 +342,11 @@
   <div class="footer-links">
     <a href="https://github.com/hamzamurat1" target="_blank" class="footer-link">GitHub</a>
     <a href="https://www.linkedin.com/in/hamza-murat-tortum" target="_blank" class="footer-link">LinkedIn</a>
-    <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link">E-posta</a>
+    <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link" data-tr="E-posta">Email</a>
   </div>
 </footer>
 
 <script src="VakitTakibim.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>

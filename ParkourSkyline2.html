@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Parkour Skyline 2</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="ParkourSkyline2.css">
+<link rel="stylesheet" href="lang.css">
 </head>
 <body>
 
 <nav id="navbar">
   <a class="nav-logo" href="index.html">HMT</a>
   <div class="nav-links">
-    <a href="about.html" class="nav-link">Hakkımda</a>
-    <a href="VakitTakibim.html" class="nav-link active">Projeler</a>
+    <a href="about.html" class="nav-link" data-tr="Hakkımda">About</a>
+    <a href="VakitTakibim.html" class="nav-link active" data-tr="Projeler">Projects</a>
     <a href="Erzurum.html" class="nav-link">Erzurum</a>
-  </div>
+    <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
+    </div>
 </nav>
 
 <!-- ── ÜST PROJE GEÇİŞİ ── -->
@@ -27,7 +29,7 @@
 <section id="hero">
   <div class="hero-label">UNREAL ENGINE 5 · C++</div>
   <h1 class="hero-title">Parkour <em>Skyline 2</em></h1>
-  <p class="hero-sub">Koş, Zıpla, Bitiş Noktasına Ulaş · Yayın Sürecinde</p>
+  <p class="hero-sub" data-tr="Koş, Zıpla, Bitiş Noktasına Ulaş · Yayın Sürecinde">Run, Jump, Reach the Finish · Publishing in Progress</p>
 </section>
 
 <div id="sticky-section">
@@ -36,21 +38,21 @@
     <div class="side-panel" id="left-panel">
       <div class="info-card">
         <div class="card-icon">🏃</div>
-        <div class="card-title">Koş & Zıpla</div>
-        <div class="card-desc">Basit ve akıcı kontrollerle ileri koşma ve engelleri aşmak için zıplama mekaniği.</div>
-        <span class="card-tag">Temel Mekanik</span>
+        <div class="card-title" data-tr="Koş &amp; Zıpla">Run & Jump</div>
+        <div class="card-desc" data-tr="Basit ve akıcı kontrollerle ileri koşma ve engelleri aşmak için zıplama mekaniği.">Running forward and jumping over obstacles with simple, fluid controls.</div>
+        <span class="card-tag" data-tr="Temel Mekanik">Core Mechanic</span>
       </div>
       <div class="info-card">
         <div class="card-icon">🪙</div>
-        <div class="card-title">Para Toplama</div>
-        <div class="card-desc">Yol boyunca dağılmış paraları toplayarak skoru artırmak, bölümü tamamlamak kadar önemli.</div>
-        <span class="card-tag">Puanlama</span>
+        <div class="card-title" data-tr="Para Toplama">Coin Collectibles</div>
+        <div class="card-desc" data-tr="Yol boyunca dağılmış paraları toplayarak skoru artırmak, bölümü tamamlamak kadar önemli.">Collecting coins scattered along the route matters as much as finishing the level.</div>
+        <span class="card-tag" data-tr="Puanlama">Scoring</span>
       </div>
       <div class="info-card">
         <div class="card-icon">🏁</div>
-        <div class="card-title">Bitiş Noktası</div>
-        <div class="card-desc">Her bölüm, rotanın sonundaki bayrağa/butona ulaşıldığında tamamlanıyor.</div>
-        <span class="card-tag">Hedef</span>
+        <div class="card-title" data-tr="Bitiş Noktası">Finish Line</div>
+        <div class="card-desc" data-tr="Her bölüm, rotanın sonundaki bayrağa/butona ulaşıldığında tamamlanıyor.">Each level is completed by reaching the flag or button at the end of the route.</div>
+        <span class="card-tag" data-tr="Hedef">Goal</span>
       </div>
     </div>
 
@@ -62,21 +64,21 @@
     <div class="side-panel" id="right-panel">
       <div class="info-card right-card">
         <div class="card-icon">❄️</div>
-        <div class="card-title">Yeni Gökyüzü Temalı Seviyeler</div>
-        <div class="card-desc">İlk oyuna göre tamamen yeni, buz/gökyüzü temalı bölümler eklendi.</div>
-        <span class="card-tag">Yeni Bölümler</span>
+        <div class="card-title" data-tr="Yeni Gökyüzü Temalı Seviyeler">New Sky-Themed Levels</div>
+        <div class="card-desc" data-tr="İlk oyuna göre tamamen yeni, buz/gökyüzü temalı bölümler eklendi.">Completely new ice and sky themed levels compared to the first game.</div>
+        <span class="card-tag" data-tr="Yeni Bölümler">New Levels</span>
       </div>
       <div class="info-card right-card">
         <div class="card-icon">🎨</div>
-        <div class="card-title">Yenilenen Görsel Kalite</div>
-        <div class="card-desc">Karakter ve çevre modelleri sıfırdan tasarlandı, aydınlatma ve renk paleti baştan kuruldu.</div>
-        <span class="card-tag">Görsellik</span>
+        <div class="card-title" data-tr="Yenilenen Görsel Kalite">Renewed Visual Quality</div>
+        <div class="card-desc" data-tr="Karakter ve çevre modelleri sıfırdan tasarlandı, aydınlatma ve renk paleti baştan kuruldu.">Character and environment models were rebuilt from scratch, with new lighting and palette.</div>
+        <span class="card-tag" data-tr="Görsellik">Visuals</span>
       </div>
       <div class="info-card right-card">
         <div class="card-icon">⚙️</div>
-        <div class="card-title">Tek Kişilik Geliştirme</div>
-        <div class="card-desc">Kod, tasarım ve sanat tek kişi tarafından yürütülüyor.</div>
-        <span class="card-tag">Rol</span>
+        <div class="card-title" data-tr="Tek Kişilik Geliştirme">Solo Development</div>
+        <div class="card-desc" data-tr="Kod, tasarım ve sanat tek kişi tarafından yürütülüyor.">Code, design and art are all handled by one person.</div>
+        <span class="card-tag" data-tr="Rol">Role</span>
       </div>
     </div>
 
@@ -84,25 +86,25 @@
 </div>
 
 <div class="scroll-hint" style="text-align:center; margin-top:-40px; margin-bottom:20px;">
-  <span class="scroll-line"></span> KEŞFETMEK İÇİN KAYDIR <span class="scroll-line"></span>
+  <span class="scroll-line"></span> <span data-tr="KEŞFETMEK İÇİN KAYDIR">SCROLL TO EXPLORE</span> <span class="scroll-line"></span>
 </div>
 
 <div id="stats">
   <div class="stat-card">
     <div class="stat-num">UE5</div>
-    <div class="stat-label">Motor</div>
+    <div class="stat-label" data-tr="Motor">Engine</div>
   </div>
   <div class="stat-card">
     <div class="stat-num">C++</div>
-    <div class="stat-label">Ana Dil</div>
+    <div class="stat-label" data-tr="Ana Dil">Core Language</div>
   </div>
   <div class="stat-card">
     <div class="stat-num">1</div>
-    <div class="stat-label">Tek Geliştirici</div>
+    <div class="stat-label" data-tr="Tek Geliştirici">Solo Developer</div>
   </div>
   <div class="stat-card">
     <div class="stat-num">Android</div>
-    <div class="stat-label">Hedef Platform</div>
+    <div class="stat-label" data-tr="Hedef Platform">Target Platform</div>
   </div>
 </div>
 
@@ -110,34 +112,34 @@
   <div class="feature-card">
     <div class="feature-icon">🏃</div>
     <div class="feature-content">
-      <div class="feature-title">Basit ve Net Hedef</div>
-      <div class="feature-desc">Oyuncu koşar, engelleri aşmak için zıplar ve rotanın sonundaki butona ulaşarak bölümü tamamlar. Sade ama akıcı bir parkur deneyimi.</div>
+      <div class="feature-title" data-tr="Basit ve Net Hedef">A Simple, Clear Goal</div>
+      <div class="feature-desc" data-tr="Oyuncu koşar, engelleri aşmak için zıplar ve rotanın sonundaki butona ulaşarak bölümü tamamlar. Sade ama akıcı bir parkur deneyimi.">The player runs, jumps over obstacles and finishes the level by reaching the button at the end of the route. A simple but fluid parkour experience.</div>
       <div class="feature-tags">
-        <span class="ftag">Koşu</span>
-        <span class="ftag">Zıplama</span>
-        <span class="ftag">Hedefe Ulaş</span>
+        <span class="ftag" data-tr="Koşu">Run</span>
+        <span class="ftag" data-tr="Zıplama">Jump</span>
+        <span class="ftag" data-tr="Hedefe Ulaş">Reach the Goal</span>
       </div>
     </div>
   </div>
   <div class="feature-card">
     <div class="feature-icon">🪙</div>
     <div class="feature-content">
-      <div class="feature-title">Para Toplama & Skor</div>
-      <div class="feature-desc">Bitiş noktasına ulaşmak yetmiyor; yol boyunca toplanan paralar da skoru doğrudan etkiliyor. Oyuncu hem hızlı hem de dikkatli olmak zorunda.</div>
+      <div class="feature-title" data-tr="Para Toplama &amp; Skor">Coin Collecting & Score</div>
+      <div class="feature-desc" data-tr="Bitiş noktasına ulaşmak yetmiyor; yol boyunca toplanan paralar da skoru doğrudan etkiliyor. Oyuncu hem hızlı hem de dikkatli olmak zorunda.">Reaching the finish is not enough; coins collected along the way feed directly into the score. The player has to be both fast and careful.</div>
       <div class="feature-tags">
-        <span class="ftag">Para Toplama</span>
-        <span class="ftag">Puanlama</span>
+        <span class="ftag" data-tr="Para Toplama">Coin Collectibles</span>
+        <span class="ftag" data-tr="Puanlama">Scoring</span>
       </div>
     </div>
   </div>
   <div class="feature-card">
     <div class="feature-icon">❄️</div>
     <div class="feature-content">
-      <div class="feature-title">İlk Oyuna Göre Baştan Yenilendi</div>
-      <div class="feature-desc">Yeni gökyüzü/buz temalı seviyeler, yenilenmiş 3D varlıklar ve geliştirilmiş görsel kalite ile ilk oyuna kıyasla her yönüyle büyük bir adım.</div>
+      <div class="feature-title" data-tr="İlk Oyuna Göre Baştan Yenilendi">Rebuilt From the Ground Up</div>
+      <div class="feature-desc" data-tr="Yeni gökyüzü/buz temalı seviyeler, yenilenmiş 3D varlıklar ve geliştirilmiş görsel kalite ile ilk oyuna kıyasla her yönüyle büyük bir adım.">New sky and ice themed levels, rebuilt 3D assets and improved visual quality make this a big step up from the first game.</div>
       <div class="feature-tags">
-        <span class="ftag">Yeni Bölümler</span>
-        <span class="ftag">Görsel Yenileme</span>
+        <span class="ftag" data-tr="Yeni Bölümler">New Levels</span>
+        <span class="ftag" data-tr="Görsel Yenileme">Visual Upgrade</span>
       </div>
     </div>
   </div>
@@ -150,12 +152,12 @@
       <img class="shot-img" src="frames/pictures/SP3.png" alt="Mobil Kontroller ve HUD">
     </div>
     <div class="shot-text">
-      <div class="shot-tag">Kontroller · Mobil HUD</div>
-      <h2 class="shot-title">Mobil Kontroller<br>& HUD</h2>
-      <p class="shot-desc">Sol altta sanal joystick, sağ altta zıplama butonu. Sol üst köşede 3 kalpten oluşan can sistemi, sağ üst köşede gerçek zamanlı skor takibi. Üçüncü şahıs kamera açısıyla karakterin hareketleri net bir şekilde takip edilebiliyor.</p>
+      <div class="shot-tag" data-tr="Kontroller · Mobil HUD">Controls · Mobile HUD</div>
+      <h2 class="shot-title" data-tr="Mobil Kontroller&lt;br&gt;&amp; HUD">Mobile Controls<br>& HUD</h2>
+      <p class="shot-desc" data-tr="Sol altta sanal joystick, sağ altta zıplama butonu. Sol üst köşede 3 kalpten oluşan can sistemi, sağ üst köşede gerçek zamanlı skor takibi. Üçüncü şahıs kamera açısıyla karakterin hareketleri net bir şekilde takip edilebiliyor.">A virtual joystick bottom-left, a jump button bottom-right. A three-heart health system top-left and real-time score tracking top-right. The third-person camera keeps the character's movement clearly readable.</p>
       <div class="shot-tags">
-        <span class="stag">Sanal Joystick</span>
-        <span class="stag">HUD Sistemi</span>
+        <span class="stag" data-tr="Sanal Joystick">Virtual Joystick</span>
+        <span class="stag" data-tr="HUD Sistemi">HUD System</span>
         <span class="stag">Android</span>
       </div>
     </div>
@@ -166,13 +168,13 @@
       <img class="shot-img" src="frames/pictures/SP4.png" alt="Karakter ve Çevre Tasarımı">
     </div>
     <div class="shot-text">
-      <div class="shot-tag">Karakter · Çevre Tasarımı</div>
-      <h2 class="shot-title">El Yapımı Karakter<br>& Çevre Tasarımı</h2>
-      <p class="shot-desc">Karakter modeli, buz ağaçları ve yön levhaları dahil tüm 3D varlıklar sıfırdan tasarlandı. Soğuk mavi-buz paleti, sıcak kahverengi karakter tonlarıyla kontrast oluşturarak sahneye derinlik katıyor.</p>
+      <div class="shot-tag" data-tr="Karakter · Çevre Tasarımı">Character · Environment Art</div>
+      <h2 class="shot-title" data-tr="El Yapımı Karakter&lt;br&gt;&amp; Çevre Tasarımı">Handcrafted Character<br>& Environment</h2>
+      <p class="shot-desc" data-tr="Karakter modeli, buz ağaçları ve yön levhaları dahil tüm 3D varlıklar sıfırdan tasarlandı. Soğuk mavi-buz paleti, sıcak kahverengi karakter tonlarıyla kontrast oluşturarak sahneye derinlik katıyor.">Every 3D asset — the character model, the ice trees, the signposts — was built from scratch. The cold blue-ice palette contrasts with warm brown character tones to give the scene depth.</p>
       <div class="shot-tags">
-        <span class="stag">Karakter Tasarımı</span>
+        <span class="stag" data-tr="Karakter Tasarımı">Character Design</span>
         <span class="stag">Blender 3D</span>
-        <span class="stag">Renk Paleti</span>
+        <span class="stag" data-tr="Renk Paleti">Color Palette</span>
       </div>
     </div>
   </div>
@@ -182,13 +184,13 @@
       <img class="shot-img" src="frames/pictures/SP5.png" alt="Buzlu Gökyüzü Adaları">
     </div>
     <div class="shot-text">
-      <div class="shot-tag">Çevre · Buzlu Gökyüzü Adaları</div>
-      <h2 class="shot-title">Buzlu Gökyüzü<br>Adaları</h2>
-      <p class="shot-desc">Bulutların üzerinde yüzen buz platformları arasında zıplayarak ilerleyen bir parkur rotası. Altın paralar, uyarı tabelaları ve bayrakla işaretlenen kontrol noktaları, oyuncuyu her bölümde farklı bir ritimle karşılıyor.</p>
+      <div class="shot-tag" data-tr="Çevre · Buzlu Gökyüzü Adaları">Environment · Ice Sky Islands</div>
+      <h2 class="shot-title" data-tr="Buzlu Gökyüzü&lt;br&gt;Adaları">Icy Sky<br>Islands</h2>
+      <p class="shot-desc" data-tr="Bulutların üzerinde yüzen buz platformları arasında zıplayarak ilerleyen bir parkur rotası. Altın paralar, uyarı tabelaları ve bayrakla işaretlenen kontrol noktaları, oyuncuyu her bölümde farklı bir ritimle karşılıyor.">A parkour route that hops between ice platforms floating above the clouds. Gold coins, warning signs and flag-marked checkpoints give every level its own rhythm.</p>
       <div class="shot-tags">
-        <span class="stag">Buz Platformları</span>
-        <span class="stag">Gökyüzü Bölüm Tasarımı</span>
-        <span class="stag">Para Toplama</span>
+        <span class="stag" data-tr="Buz Platformları">Ice Platforms</span>
+        <span class="stag" data-tr="Gökyüzü Bölüm Tasarımı">Sky Level Design</span>
+        <span class="stag" data-tr="Para Toplama">Coin Collectibles</span>
       </div>
     </div>
   </div>
@@ -199,13 +201,13 @@
   <a href="BreadBlade.html" class="proj-nav-btn prev">
     <span class="proj-nav-arrow">←</span>
     <div class="proj-nav-text">
-      <div class="proj-nav-label">Önceki</div>
+      <div class="proj-nav-label" data-tr="Önceki">Previous</div>
       <div class="proj-nav-title">Bread &amp; Blade</div>
     </div>
   </a>
   <a href="PsFps.html" class="proj-nav-btn next">
     <div class="proj-nav-text" style="text-align:right">
-      <div class="proj-nav-label">Sonraki Proje</div>
+      <div class="proj-nav-label" data-tr="Sonraki Proje">Next Project</div>
       <div class="proj-nav-title">Precision Shoot FPS</div>
     </div>
     <span class="proj-nav-arrow">→</span>
@@ -217,10 +219,11 @@
   <div class="footer-links">
     <a href="https://github.com/hamzamurat1" target="_blank" class="footer-link">GitHub</a>
     <a href="https://www.linkedin.com/in/hamza-murat-tortum" target="_blank" class="footer-link">LinkedIn</a>
-    <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link">E-posta</a>
+    <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link" data-tr="E-posta">Email</a>
   </div>
 </footer>
 
 <script src="ParkourSkyline2.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>

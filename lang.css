@@ -1,0 +1,49 @@
+/* ── Dil değiştirici düğmesi ──
+   Rengi sayfadan miras alır (currentColor), böylece her paletle uyumlu:
+   altın, çağla, turkuaz, gökyüzü mavisi ve neon lacivert. */
+
+.lang-toggle {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+  padding: 7px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s, background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.lang-toggle:hover {
+  opacity: 1;
+  background: rgba(127, 127, 127, 0.12);
+}
+.lang-toggle:active { transform: scale(0.94); }
+.lang-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+/* JS kapalıysa düğme işe yaramaz — gizle, sayfa İngilizce kalır */
+.no-js .lang-toggle { display: none; }
+
+/* Uzun, biçimli çeviri blokları. Varsayılan İngilizce görünür;
+   lang.js seçime göre hidden özniteliğini yönetir. */
+.lx.tr { display: none; }
+.lx[hidden] { display: none !important; }
+.lx.tr:not([hidden]) { display: block; }
+
+@media (max-width: 768px) {
+  .lang-toggle {
+    font-size: 9px;
+    padding: 6px 10px;
+    margin-left: 6px;
+    letter-spacing: 1.5px;
+  }
+}

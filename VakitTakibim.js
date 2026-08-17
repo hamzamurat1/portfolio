@@ -11,9 +11,15 @@ document.querySelectorAll('.feature-card').forEach(el => observer.observe(el));
 const aboutMore   = document.getElementById('about-more');
 const aboutToggle = document.getElementById('about-toggle');
 
+function trAktif() {
+  try { return localStorage.getItem('hmt-lang') === 'tr'; } catch (e) { return false; }
+}
 aboutToggle.addEventListener('click', () => {
   const open = aboutMore.classList.toggle('open');
-  aboutToggle.textContent = open ? 'Daha az ↑' : 'Daha fazla ↓';
+  const tr = trAktif();
+  aboutToggle.textContent = open
+    ? (tr ? 'Daha az ↑'    : 'Read less ↑')
+    : (tr ? 'Daha fazla ↓' : 'Read more ↓');
 });
 
 // ── Yatay galeri ──

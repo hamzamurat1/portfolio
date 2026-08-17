@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Georgia&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ErzurumD.css">
+  <link rel="stylesheet" href="lang.css">
 </head>
 <body>
 
@@ -15,9 +16,10 @@
   <nav id="navbar">
     <a href="index.html" class="nav-logo">HMT</a>
     <div class="nav-links">
-      <a href="about.html" class="nav-tab">HAKKIMDA</a>
-      <a href="VakitTakibim.html" class="nav-tab">PROJELER</a>
+      <a href="about.html" class="nav-tab" data-tr="HAKKIMDA">ABOUT</a>
+      <a href="VakitTakibim.html" class="nav-tab" data-tr="PROJELER">PROJECTS</a>
       <a href="Erzurum.html" class="nav-tab active">ERZURUM</a>
+      <button id="lang-toggle" class="lang-toggle" type="button">EN</button>
     </div>
   </nav>
 
@@ -28,9 +30,9 @@
         <img src="frames/pictures/Koyevi.png" alt="Köy Evi">
       </div>
       <div class="scene-text">
-        <div class="scene-eyebrow">SON CEPHE</div>
-        <h1 class="scene-title">Murat'ın<br>Köy Evi</h1>
-        <p class="scene-desc">1920'lerin Erzurum'unda bir köy evi. Murat, eşi ve çocuklarıyla huzur içinde yaşıyor — savaş henüz çok uzakta.</p>
+        <div class="scene-eyebrow" data-tr="SON CEPHE">THE LAST FRONT</div>
+        <h1 class="scene-title" data-tr="Murat'ın&lt;br&gt;Köy Evi">Murat's<br>Village Home</h1>
+        <p class="scene-desc" data-tr="1920'lerin Erzurum'unda bir köy evi. Murat, eşi ve çocuklarıyla huzur içinde yaşıyor — savaş henüz çok uzakta.">A village home in 1920s Erzurum. Murat lives peacefully with his wife and children — the war is still far away.</p>
       </div>
     </section>
 
@@ -39,9 +41,9 @@
         <img src="frames/pictures/CanakkaleCephe.png" alt="Cephe Hattı">
       </div>
       <div class="scene-text">
-        <div class="scene-eyebrow">BÖLÜM I — UYANIŞ</div>
-        <h2 class="scene-title">Huzur,<br>Cepheye Dönüşür</h2>
-        <p class="scene-desc">Gökyüzü kararır. Murat gözlerini açtığında kendini siper hattında, düşman dalgalarına karşı savunma yaparken bulur.</p>
+        <div class="scene-eyebrow" data-tr="BÖLÜM I — UYANIŞ">CHAPTER I — AWAKENING</div>
+        <h2 class="scene-title" data-tr="Huzur,&lt;br&gt;Cepheye Dönüşür">Peace<br>Turns to Front Line</h2>
+        <p class="scene-desc" data-tr="Gökyüzü kararır. Murat gözlerini açtığında kendini siper hattında, düşman dalgalarına karşı savunma yaparken bulur.">The sky darkens. When Murat opens his eyes he finds himself in the trenches, defending against enemy waves.</p>
       </div>
     </section>
 
@@ -50,9 +52,9 @@
         <img src="frames/pictures/EgitimKampi.png" alt="Eğitim Kampı">
       </div>
       <div class="scene-text">
-        <div class="scene-eyebrow">BÖLÜM II — SİLAH BAŞINA</div>
-        <h2 class="scene-title">Eğitim<br>Kampında</h2>
-        <p class="scene-desc">Zaman geriye sarar. Murat'ın askeri eğitimi ve Hüseyin ile ilk tanışması — yoldaşlığın temelleri burada atılır.</p>
+        <div class="scene-eyebrow" data-tr="BÖLÜM II — SİLAH BAŞINA">CHAPTER II — TO ARMS</div>
+        <h2 class="scene-title" data-tr="Eğitim&lt;br&gt;Kampında">At the<br>Training Camp</h2>
+        <p class="scene-desc" data-tr="Zaman geriye sarar. Murat'ın askeri eğitimi ve Hüseyin ile ilk tanışması — yoldaşlığın temelleri burada atılır.">Time rewinds. Murat's military training and his first meeting with Hüseyin — the foundations of their comradeship are laid here.</p>
       </div>
     </section>
 
@@ -61,9 +63,9 @@
         <img src="frames/pictures/Koy.png" alt="Köy">
       </div>
       <div class="scene-text">
-        <div class="scene-eyebrow">MOTİVASYON</div>
-        <h2 class="scene-title">Korunacak<br>Bir Yurt</h2>
-        <p class="scene-desc">Düşman kuvvetleri Anadolu'nun derinliklerine ilerlerken, Murat'ı cephede tutan tek şey: ailesi ve köyü.</p>
+        <div class="scene-eyebrow" data-tr="MOTİVASYON">MOTIVATION</div>
+        <h2 class="scene-title" data-tr="Korunacak&lt;br&gt;Bir Yurt">A Homeland<br>Worth Defending</h2>
+        <p class="scene-desc" data-tr="Düşman kuvvetleri Anadolu'nun derinliklerine ilerlerken, Murat'ı cephede tutan tek şey: ailesi ve köyü.">As enemy forces push deeper into Anatolia, only one thing keeps Murat at the front: his family and his village.</p>
       </div>
     </section>
 
@@ -72,9 +74,9 @@
         <img src="frames/pictures/Tank2.png" alt="Tank Bölümü">
       </div>
       <div class="scene-text">
-        <div class="scene-eyebrow">BÖLÜM III — ÇELİK FIRTINA</div>
-        <h2 class="scene-title">Terk Edilmiş<br>Bir Tank</h2>
-        <p class="scene-desc">"Bunu çalıştırabilir miyiz?" Murat ve Hüseyin, ele geçirdikleri düşman tankıyla lojistik hatlarını yerle bir eder.</p>
+        <div class="scene-eyebrow" data-tr="BÖLÜM III — ÇELİK FIRTINA">CHAPTER III — STEEL STORM</div>
+        <h2 class="scene-title" data-tr="Terk Edilmiş&lt;br&gt;Bir Tank">An Abandoned<br>Tank</h2>
+        <p class="scene-desc" data-tr="&quot;Bunu çalıştırabilir miyiz?&quot; Murat ve Hüseyin, ele geçirdikleri düşman tankıyla lojistik hatlarını yerle bir eder.">"Can we get this running?" Murat and Hüseyin tear apart the enemy's logistics lines with a captured tank.</p>
       </div>
     </section>
 
@@ -83,9 +85,9 @@
         <img src="frames/pictures/karargah.png" alt="Karargah">
       </div>
       <div class="scene-text">
-        <div class="scene-eyebrow">BÖLÜM IV — KARANLIK OPERASYON</div>
-        <h2 class="scene-title">Sessiz<br>Bir Baskın</h2>
-        <p class="scene-desc">Gece vakti, ele geçirilen düşman karargâhına sızılır. Amaç: gizli savaş belgelerini ele geçirmek, fark edilmeden çekilmek.</p>
+        <div class="scene-eyebrow" data-tr="BÖLÜM IV — KARANLIK OPERASYON">CHAPTER IV — DARK OPERATION</div>
+        <h2 class="scene-title" data-tr="Sessiz&lt;br&gt;Bir Baskın">A Silent<br>Raid</h2>
+        <p class="scene-desc" data-tr="Gece vakti, ele geçirilen düşman karargâhına sızılır. Amaç: gizli savaş belgelerini ele geçirmek, fark edilmeden çekilmek.">At night, they infiltrate the captured enemy headquarters. The goal: seize the secret war documents and withdraw unnoticed.</p>
       </div>
     </section>
 
@@ -94,18 +96,19 @@
         <img src="frames/pictures/Er_AziziyeTabyasi.png" alt="Aziziye Tabyası">
       </div>
       <div class="scene-text">
-        <div class="scene-eyebrow">EPİLOG</div>
-        <h2 class="scene-title">Aziziye Tabyası'nda<br>Son Görev</h2>
-        <p class="scene-desc">Hüseyin'in fedakarlığıyla yazılan bu hikaye, Erzurum: Son Cephe adıyla Unreal Engine 5'te geliştiriliyor. Tek oyunculu, 6–8 saatlik bir anlatı deneyimi.</p>
-        <a href="VakitTakibim.html" class="scene-btn">PROJELERE DÖN →</a>
+        <div class="scene-eyebrow" data-tr="EPİLOG">EPILOGUE</div>
+        <h2 class="scene-title" data-tr="Aziziye Tabyası'nda&lt;br&gt;Son Görev">The Last Mission<br>at Aziziye Fort</h2>
+        <p class="scene-desc" data-tr="Hüseyin'in fedakarlığıyla yazılan bu hikaye, Erzurum: Son Cephe adıyla Unreal Engine 5'te geliştiriliyor. Tek oyunculu, 6–8 saatlik bir anlatı deneyimi.">Written around Hüseyin's sacrifice, this story is in development in Unreal Engine 5 as Erzurum: The Last Front. A single-player narrative experience of 6–8 hours.</p>
+        <a href="VakitTakibim.html" class="scene-btn" data-tr="PROJELERE DÖN →">BACK TO PROJECTS →</a>
       </div>
     </section>
 
   </div>
 
   <div id="scene-dots"></div>
-  <div id="scroll-hint">KAYDIR</div>
+  <div id="scroll-hint" data-tr="KAYDIR">SCROLL</div>
 
   <script src="ErzurumD.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>
