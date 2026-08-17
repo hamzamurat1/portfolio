@@ -81,7 +81,7 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       form.reset();
       successMsg.style.display = 'block';
-      submitBtn.innerHTML = 'Message Sent ✓';
+      submitBtn.innerHTML = 'Mesaj Gönderildi ✓';
     } else {
       throw new Error('Form gönderimi başarısız');
     }
