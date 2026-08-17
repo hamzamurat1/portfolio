@@ -100,7 +100,25 @@ html, body {
   max-width:400px;
   opacity:0; animation:fadeUp 0.9s ease 0.5s forwards;
   transition:max-width 0.35s ease;
+
+  /* body'de overflow:hidden var; uzun panel (hakkımda / projeler) taşarsa
+     kaydırılamıyordu. Panelin kendisi kaydırılabilir. Alttaki boşluk son
+     satırın sabit footer'ın altında kalmasını önlüyor. */
+  max-height:calc(100vh - 148px);
+  overflow-y:auto;
+  padding-right:14px;
+  padding-bottom:32px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(154,128,96,0.35) transparent;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
 }
+#left-panel::-webkit-scrollbar { width:4px; }
+#left-panel::-webkit-scrollbar-track { background:transparent; }
+#left-panel::-webkit-scrollbar-thumb {
+  background:rgba(154,128,96,0.3); border-radius:2px;
+}
+#left-panel::-webkit-scrollbar-thumb:hover { background:rgba(154,128,96,0.5); }
 /* PROJECTS sekmesi etkinken 2 sütunlu proje ızgarasına yer aç.
    Genişlik bilinçli olarak sınırlı: panel arka plan videosunun
    aydınlanan sağ tarafına taşarsa metin okunmaz oluyor. */
@@ -212,6 +230,13 @@ html, body {
   padding:5px 13px; border:1px solid rgba(232,200,74,0.2);
   color:var(--accent); text-transform:uppercase;
 }
+/* Prototip rozeti one ciksin — diger etiketler hedef/ongoru bildiriyor */
+.erz-tag.erz-tag-wip {
+  color:rgba(232,200,74,0.95);
+  border-color:rgba(232,200,74,0.55);
+  background:rgba(232,200,74,0.07);
+  font-weight:700;
+}
 
 /* ── Footer ── */
 #footer {
@@ -273,27 +298,16 @@ html, body {
 @media (max-width:600px) {
   .proj-list { grid-template-columns:1fr; gap:14px; }
 
-  /* body'de overflow:hidden var; tek sütuna düşen 6 proje telefonda
-     ekranı aşıyor ve kaydırılamıyordu. Panelin kendisi kaydırılabilir
-     oluyor (dar yatay ekran için aynısı yukarıda zaten yapılmış).
-     Yükseklik panelin yeni üst konumuna (50px) ve footer'a göre. */
-  #left-panel {
-    max-height: calc(100vh - 105px);
-    overflow-y: auto;
-    padding-right: 10px;
-    -webkit-overflow-scrolling: touch;
-  }
-  #left-panel::-webkit-scrollbar { width:3px; }
-  #left-panel::-webkit-scrollbar-thumb {
-    background:rgba(154,128,96,0.3); border-radius:2px;
-  }
+  /* Kaydırma artık #left-panel temel kuralında; burada yalnız
+     dar ekran için iç boşluk kısılıyor. */
+  #left-panel { padding-right:10px; }
 }
 
 /* ── Mobil: sol paneli yukari cek ──
    Navbar telefonda kisaldi (lang.css); top:88px geride bosluk birakiyordu.
    Icerik boylece ekranin ustune yaklasiyor ve daha fazlasi katlanmadan gorunuyor. */
 @media (max-width:768px) {
-  #left-panel { top:58px; left:4vw; }
+  #left-panel { top:58px; left:4vw; max-height:calc(100vh - 112px); }
   #eyebrow    { margin-bottom:8px; }
   #name       { margin-bottom:4px; }
   #title-line { margin-bottom:12px; }
@@ -301,5 +315,5 @@ html, body {
   #bio        { margin-bottom:16px; }
 }
 @media (max-width:420px) {
-  #left-panel { top:50px; left:3vw; }
+  #left-panel { top:50px; left:3vw; max-height:calc(100vh - 100px); }
 }
