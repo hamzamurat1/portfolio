@@ -272,4 +272,18 @@ html, body {
 }
 @media (max-width:600px) {
   .proj-list { grid-template-columns:1fr; gap:14px; }
+
+  /* body'de overflow:hidden var; tek sütuna düşen 6 proje telefonda
+     ekranı aşıyor ve kaydırılamıyordu. Panelin kendisi kaydırılabilir
+     oluyor (dar yatay ekran için aynısı yukarıda zaten yapılmış). */
+  #left-panel {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding-right: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  #left-panel::-webkit-scrollbar { width:3px; }
+  #left-panel::-webkit-scrollbar-thumb {
+    background:rgba(154,128,96,0.3); border-radius:2px;
+  }
 }
