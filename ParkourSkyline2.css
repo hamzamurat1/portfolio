@@ -1,13 +1,13 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 :root {
-  --accent:     #d4a017;
-  --accent-dim: rgba(212,160,23,0.5);
-  --dark:       #1a1508;
-  --bg:         #f5f2ec;
-  --bg2:        #edeae2;
-  --text:       #1a1508;
-  --muted:      rgba(26,21,8,0.45);
-  --border:     rgba(212,160,23,0.2);
+  --accent:     #1E85C4;  /* gökyüzü mavisi */
+  --accent-dim: rgba(30,133,196,0.5);
+  --dark:       #0F2E47;
+  --bg:         #F7FBFE;  /* beyaz + mavi tint */
+  --bg2:        #E8F4FC;
+  --text:       #0F2E47;
+  --muted:      rgba(15,46,71,0.52);
+  --border:     rgba(30,133,196,0.2);
   --card:       #fff;
 }
 html { scroll-behavior: smooth; }
@@ -24,9 +24,9 @@ body {
   position:fixed; top:0; left:0; right:0; z-index:100;
   display:flex; justify-content:space-between; align-items:center;
   padding:20px 5vw;
-  background: rgba(245,242,236,0.92);
+  background: rgba(247,251,254,0.93);
   backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(212,160,23,0.12);
+  border-bottom:1px solid rgba(30,133,196,0.12);
 }
 .nav-logo {
   font-size:13px; font-weight:800; letter-spacing:3px;
@@ -37,17 +37,43 @@ body {
 .nav-links { display:flex; gap:4px; }
 .nav-link {
   font-size:10px; font-weight:600; letter-spacing:3px;
-  text-transform:uppercase; color:rgba(26,21,8,0.35);
+  text-transform:uppercase; color:rgba(15,46,71,0.4);
   text-decoration:none; padding:8px 18px;
   transition:color 0.2s; border-radius:20px;
 }
-.nav-link.active { color:var(--dark); background:rgba(212,160,23,0.1); }
+.nav-link.active { color:var(--dark); background:rgba(30,133,196,0.1); }
 .nav-link:hover { color:var(--dark); }
 
 
+/* ── ÜST PROJE GEÇİŞİ ── */
+#proj-nav-top {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 96px 5vw 0;
+  display: flex; justify-content: space-between;
+  gap: 12px;
+}
+.pn-mini {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  padding: 8px 15px; border-radius: 20px;
+  border: 1px solid rgba(30,133,196,0.16);
+  background: rgba(255,255,255,0.5);
+  transition: all 0.22s;
+  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.pn-mini:hover {
+  color: var(--accent); border-color: rgba(30,133,196,0.4);
+  background: var(--card);
+}
+.pn-mini.next { margin-left: auto; }
+
 /* HERO */
 #hero {
-  padding: 110px 5vw 40px;
+  padding: 22px 5vw 40px;
   text-align: center;
   opacity:0; animation: fadeUp 0.9s ease 0.3s forwards;
 }
@@ -103,14 +129,14 @@ body {
   background: var(--card);
   border-radius: 16px;
   padding: 20px 20px;
-  border: 1px solid rgba(212,160,23,0.12);
+  border: 1px solid rgba(30,133,196,0.12);
   box-shadow: 0 2px 20px rgba(0,0,0,0.06);
   opacity: 0;
   transform: translateX(-20px);
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s;
 }
 .info-card:hover {
-  box-shadow: 0 4px 30px rgba(212,160,23,0.15);
+  box-shadow: 0 4px 30px rgba(30,133,196,0.15);
 }
 .info-card.visible {
   opacity: 1;
@@ -141,7 +167,7 @@ body {
   margin-top: 8px;
   font-size: 9px; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--accent); background: rgba(212,160,23,0.08);
+  color: var(--accent); background: rgba(30,133,196,0.08);
   padding: 3px 8px; border-radius: 4px;
 }
 
@@ -151,7 +177,7 @@ body {
   max-width: 680px;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(212,160,23,0.15);
+  border: 1px solid rgba(30,133,196,0.15);
   box-shadow:
     0 8px 40px rgba(0,0,0,0.12),
     0 2px 8px rgba(0,0,0,0.06);
@@ -204,7 +230,7 @@ body {
   border-radius: 16px;
   padding: 24px 20px;
   text-align: center;
-  border: 1px solid rgba(212,160,23,0.1);
+  border: 1px solid rgba(30,133,196,0.1);
   box-shadow: 0 2px 16px rgba(0,0,0,0.05);
   opacity:0; transform:translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -232,7 +258,7 @@ body {
   background: var(--card);
   border-radius: 20px;
   padding: 32px 36px;
-  border: 1px solid rgba(212,160,23,0.1);
+  border: 1px solid rgba(30,133,196,0.1);
   box-shadow: 0 2px 20px rgba(0,0,0,0.05);
   display: grid;
   grid-template-columns: auto 1fr;
@@ -246,7 +272,7 @@ body {
   font-size: 32px;
   width: 56px; height: 56px;
   display: flex; align-items:center; justify-content:center;
-  background: rgba(212,160,23,0.08);
+  background: rgba(30,133,196,0.08);
   border-radius: 14px;
 }
 .feature-content {}
@@ -262,8 +288,8 @@ body {
 .ftag {
   font-size:10px; font-weight:600; padding:4px 12px;
   border-radius:20px;
-  border: 1px solid rgba(212,160,23,0.2);
-  color: var(--accent); background: rgba(212,160,23,0.06);
+  border: 1px solid rgba(30,133,196,0.2);
+  color: var(--accent); background: rgba(30,133,196,0.06);
 }
 
 /* FOOTER */
@@ -323,7 +349,7 @@ body {
 .shot-img-wrap {
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(212,160,23,0.15);
+  border: 1px solid rgba(30,133,196,0.15);
   box-shadow: 0 6px 32px rgba(0,0,0,0.1);
 }
 .shot-img {
@@ -354,8 +380,8 @@ body {
 .stag {
   font-size: 10px; font-weight: 600; padding: 5px 13px;
   border-radius: 20px;
-  border: 1px solid rgba(212,160,23,0.2);
-  color: var(--accent); background: rgba(212,160,23,0.06);
+  border: 1px solid rgba(30,133,196,0.2);
+  color: var(--accent); background: rgba(30,133,196,0.06);
 }
 
 
@@ -374,7 +400,7 @@ body {
   gap: 16px;
   padding: 20px 28px;
   background: var(--card);
-  border: 1px solid rgba(212,160,23,0.15);
+  border: 1px solid rgba(30,133,196,0.15);
   border-radius: 16px;
   text-decoration: none;
   transition: all 0.25s;
@@ -384,7 +410,7 @@ body {
 }
 .proj-nav-btn:hover {
   border-color: var(--accent);
-  box-shadow: 0 4px 24px rgba(212,160,23,0.15);
+  box-shadow: 0 4px 24px rgba(30,133,196,0.15);
   transform: translateY(-2px);
 }
 .proj-nav-btn.next { margin-left: auto; }
@@ -404,10 +430,11 @@ body {
   color: var(--dark); letter-spacing: -0.2px;
 }
 
-</style>
-
 /* ── Mobil dikey: video + kartlar görünür, video genişliği stretch ile düzeltildi ── */
 @media (max-width:768px) {
+  #proj-nav-top { padding-top: 82px; }
+  .pn-mini { font-size: 9px; padding: 7px 12px; max-width: 46%; }
+
   #sticky-section {
     height: 280vh; /* scroll-scrub mesafesi korunuyor, sadece kısaltıldı */
   }

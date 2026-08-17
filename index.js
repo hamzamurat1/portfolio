@@ -30,6 +30,10 @@ tabs.forEach(tab => {
     document.querySelectorAll('.content-panel').forEach(p => p.classList.remove('visible'));
     document.getElementById('panel-' + panelIds[idx]).classList.add('visible');
 
+    // Projeler 3 sütunlu ızgarada gösteriliyor; panele o sekmede yer aç.
+    document.getElementById('left-panel')
+      .classList.toggle('wide', panelIds[idx] === 'projects');
+
   if (window.setFrameTarget) window.setFrameTarget(TAB_TO_SECTION[idx]);
   });
 });

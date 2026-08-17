@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vakit Takibim</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="VakitTakibim.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">HMT</a>
+  <div class="nav-links">
+    <a href="about.html" class="nav-link">About</a>
+    <a href="VakitTakibim.html" class="nav-link active">Projects</a>
+    <a href="Erzurum.html" class="nav-link">Erzurum</a>
+  </div>
+</nav>
+
+<!-- ── ÜST PROJE GEÇİŞİ ── -->
+<div id="proj-nav-top">
+  <a href="index.html" class="pn-mini prev">← Tüm projeler</a>
+  <a href="BreadBlade.html" class="pn-mini next">Bread &amp; Blade →</a>
+</div>
+
+<!-- ── STORE LISTING HEADER ── -->
+<section id="listing">
+  <div class="listing-top">
+    <img class="app-icon" src="frames/pictures/vakit/icon.webp" alt="Vakit Takibim uygulama ikonu">
+    <div>
+      <h1 class="app-name">Vakit <em>Takibim</em></h1>
+      <div class="app-dev">Hamza Murat Tortum</div>
+      <div class="app-cat">Yaşam Tarzı · Flutter · Android &amp; iOS</div>
+    </div>
+  </div>
+
+  <div id="store-strip">
+    <div class="strip-cell">
+      <div class="strip-num">%100</div>
+      <div class="strip-label">Çevrimdışı Vakit</div>
+    </div>
+    <div class="strip-cell">
+      <div class="strip-num">23</div>
+      <div class="strip-label">Hesaplama Yöntemi</div>
+    </div>
+    <div class="strip-cell">
+      <div class="strip-num">3</div>
+      <div class="strip-label">Dil · TR EN AR</div>
+    </div>
+    <div class="strip-cell">
+      <div class="strip-num">3+</div>
+      <div class="strip-label">İçerik Derecesi</div>
+    </div>
+  </div>
+
+  <div id="cta">
+    <span class="cta-btn primary">Yayına Hazırlanıyor</span>
+    <a href="contact.html" class="cta-btn ghost">İletişime Geç</a>
+    <span class="cta-note">Mağaza yayını tamamlandığında bu alana indirme bağlantısı gelecek.</span>
+  </div>
+</section>
+
+<!-- ── SCREENSHOT GALLERY ── -->
+<section id="gallery-section">
+  <div class="section-head">
+    <h2 class="section-title">Ekran görüntüleri</h2>
+    <span class="section-hint">Kaydır · Büyütmek için tıkla</span>
+  </div>
+
+  <div class="gallery-wrap">
+    <button class="gal-arrow left"  id="gal-prev" aria-label="Önceki">‹</button>
+    <div id="gallery">
+      <button class="shot"><img src="frames/pictures/vakit/00_hero.webp"       alt="Vakit Takibim — namaz vakitleri her an yanında"></button>
+      <button class="shot"><img src="frames/pictures/vakit/01_ana_sayfa.webp"  alt="Vakitleri kaçırma: kalan süre, tüm vakitler ve hava durumu tek ekranda"></button>
+      <button class="shot"><img src="frames/pictures/vakit/02_kible.webp"      alt="Kıbleyi anında bulun: nerede olursanız olun Kâbe yönünü hassas pusula ile görün"></button>
+      <button class="shot"><img src="frames/pictures/vakit/03_istatistik.webp" alt="Serini koru: kıldığın vakitleri işaretle, serini büyüt"></button>
+      <button class="shot"><img src="frames/pictures/vakit/04_imsakiye.webp"   alt="Haftalık imsakiye: tüm vakitler hicri takvimle bir arada"></button>
+      <button class="shot"><img src="frames/pictures/vakit/05_menu.webp"       alt="Her şey elinin altında: Kuran, zikirmatik, hatim ve daha fazlası"></button>
+      <button class="shot"><img src="frames/pictures/vakit/06_kuran.webp"      alt="Kur'an-ı Kerim: Arapça metin ve Türkçe meal bir arada"></button>
+      <button class="shot"><img src="frames/pictures/vakit/07_cuzler.webp"     alt="Cüz cüz takip: okumaya ve dinlemeye kaldığın yerden devam et"></button>
+      <button class="shot"><img src="frames/pictures/vakit/08_listeler.webp"   alt="Kendi listelerini oluştur: sevdiğin sureleri listele, takibini kolayca yap"></button>
+      <button class="shot"><img src="frames/pictures/vakit/09_konular.webp"    alt="Konulara göre ayetler: namaz, dua, sabır — aradığın konuyu kolayca bul"></button>
+      <button class="shot"><img src="frames/pictures/vakit/10_abdest.webp"     alt="Nasıl abdest alınır: adım adım, mezhep farklarıyla resimli anlatım"></button>
+      <button class="shot"><img src="frames/pictures/vakit/11_namaz.webp"      alt="Nasıl namaz kılınır: adım adım, mezhep farklarıyla resimli anlatım"></button>
+      <button class="shot"><img src="frames/pictures/vakit/12_ozel_gun.webp"   alt="Özel gün modu: seri korunur, hatırlatmalar otomatik susturulur"></button>
+      <button class="shot"><img src="frames/pictures/vakit/13_ayarlar.webp"    alt="Tam kişiselleştirme: hesaplama yöntemi, mezhep, tema ve dil seçenekleri"></button>
+      <button class="shot"><img src="frames/pictures/vakit/14_zikirmatik.webp" alt="Zikirmatik: hedefli zikir sayacı, tur ve toplam takibi"></button>
+      <button class="shot"><img src="frames/pictures/vakit/15_hatim.webp"      alt="Birlikte hatim: hatim aç ya da koda katıl, birlikte tamamlayın"></button>
+      <button class="shot"><img src="frames/pictures/vakit/16_camiler.webp"    alt="Yakın camiler: çevredeki camileri harita üzerinde gör"></button>
+      <button class="shot"><img src="frames/pictures/vakit/17_kazalar.webp"    alt="Kaza takibi: kaza borçlarını kolayca takip et"></button>
+      <span class="gal-spacer" aria-hidden="true"></span>
+    </div>
+    <button class="gal-arrow right" id="gal-next" aria-label="Sonraki">›</button>
+  </div>
+</section>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox">
+  <button class="lb-btn" id="lb-close" aria-label="Kapat">✕</button>
+  <button class="lb-btn" id="lb-prev"  aria-label="Önceki">‹</button>
+  <img id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+  <button class="lb-btn" id="lb-next"  aria-label="Sonraki">›</button>
+</div>
+
+<!-- ── ABOUT THIS APP ── -->
+<section id="about-app">
+  <div class="section-head" style="padding-left:0; padding-right:0; max-width:none;">
+    <h2 class="section-title">Bu uygulama hakkında</h2>
+  </div>
+  <div class="about-box">
+    <p>
+      Vakit Takibim, namaz vakitlerini <strong>cihazın kendisinde astronomik olarak hesaplayan</strong>
+      bir Flutter uygulaması. Vakitler bir sunucudan çekilmiyor; <strong>adhan_dart</strong> ile
+      konum ve tarihten yerel olarak üretiliyor. Yani uçak modunda, yurt dışında, internetsiz bir
+      dağ köyünde de doğru vakti gösteriyor. İnternet yalnız üç şey için kullanılıyor:
+      hava durumu, şehir arama ve yakın camiler haritası.
+    </p>
+    <div id="about-more">
+      <p>
+        Uygulamanın ikinci ekseni <strong>alışkanlık takibi</strong>. Kılınan vakitler
+        işaretleniyor ve iki ayrı seri işliyor: günde en az bir vakitle süren normal seri ve
+        beş vaktin tamamıyla süren <strong>Altın Seri</strong>. Her serinin haftada bir kez
+        otomatik kullanılan bir dondurma hakkı var — bir günü kaçırmak aylık emeği silmiyor.
+        Namaz günü gece yarısında değil <strong>imsakta</strong> dönüyor; imsaktan önce yapılan
+        işaretlemeler önceki güne yazılıyor.
+      </p>
+      <p>
+        Bildirimler tarafında iş, "vakti gelince çal"dan daha derin: kesin alarmlı vakit
+        bildirimleri, ayarlanabilir "N dakika önce" hatırlatması, gün sonunda hiç vakit
+        işaretlenmediyse seri uyarısı ve <strong>uygulama kapalıyken de çalışması için
+        4 gün ileriye zamanlama</strong>. Cihaz yeniden başlatıldığında zamanlamalar bir
+        reboot receiver ile yeniden kuruluyor.
+      </p>
+      <p>
+        Vakit ekranının yanında ayrı bir araç seti var: Kuran okuma, tefsir ve radyo, hatim
+        takibi, zikirmatik, zekat hesaplama, dualar, hutbe, dini günler, hicri tarih çevirici,
+        Esmaül Hüsna, kaza takibi ve adım adım ibadet rehberleri. Ana ekrana ise iki widget
+        çıkıyor: haftalık noktalarla seri widget'ı ve saniye saniye işleyen vakit sayacı —
+        ikisi de uygulamanın temasına duyarlı.
+      </p>
+    </div>
+    <button id="about-toggle">Daha fazla ↓</button>
+
+    <div class="chip-row">
+      <span class="chip">Flutter</span>
+      <span class="chip">Dart</span>
+      <span class="chip">Çevrimdışı</span>
+      <span class="chip">adhan_dart</span>
+      <span class="chip">Kotlin Widget</span>
+      <span class="chip">Firebase</span>
+      <span class="chip">Liquid Glass UI</span>
+      <span class="chip">TR · EN · AR</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section id="features">
+  <div class="feature-card">
+    <div class="feature-icon">🕌</div>
+    <div class="feature-title">Çevrimdışı vakit hesabı</div>
+    <div class="feature-desc">
+      Vakitler sunucudan değil cihazdan geliyor. 23 hesaplama yöntemi (Diyanet, ISNA ve
+      diğerleri) ile Şafii/Hanefi mezhep seçimi arasından seçim yapılıyor; konum otomatik
+      ya da elle verilebiliyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">adhan_dart</span>
+      <span class="ftag">23 yöntem</span>
+      <span class="ftag">İnternetsiz</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🔔</div>
+    <div class="feature-title">Kapalıyken de çalan bildirim</div>
+    <div class="feature-desc">
+      Kesin alarmlı vakit bildirimleri, "N dakika önce" hatırlatması ve 4 gün ileriye
+      zamanlama. Inexact fallback ve reboot receiver ile uygulama kapalıyken ya da cihaz
+      yeniden başladıktan sonra da ayakta kalıyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Exact alarm</span>
+      <span class="ftag">Reboot receiver</span>
+      <span class="ftag">Ses / sessiz</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🔥</div>
+    <div class="feature-title">Çift seri ve dondurma hakkı</div>
+    <div class="feature-desc">
+      Günde bir vakitle süren normal seri, beş vaktin tamamıyla süren Altın Seri. Her seride
+      haftada bir kez otomatik kullanılan dondurma hakkı var. Gün imsaktan imsağa sayılıyor,
+      böylece gece kılınan yatsı doğru güne yazılıyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Altın Seri</span>
+      <span class="ftag">Streak freeze</span>
+      <span class="ftag">İmsak sınırı</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🧭</div>
+    <div class="feature-title">Pusula, imsakiye, camiler</div>
+    <div class="feature-desc">
+      Manyetik sapma düzeltmeli Kâbe pusulası ve mesafe; hicri tarihli 30 günlük imsakiye;
+      harita üzerinde konuma en yakın camiler ve yürüme mesafeleri.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Kıble</span>
+      <span class="ftag">Hicri takvim</span>
+      <span class="ftag">Harita</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">📖</div>
+    <div class="feature-title">Vaktin yanında bir araç seti</div>
+    <div class="feature-desc">
+      Kuran okuma, tefsir ve radyo, hatim takibi, zikirmatik, zekat hesaplama, dualar, hutbe,
+      dini günler, hicri çevirici, Esmaül Hüsna, kaza takibi ve adım adım ibadet rehberleri.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Kuran &amp; tefsir</span>
+      <span class="ftag">Zekat</span>
+      <span class="ftag">Kaza takibi</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">📱</div>
+    <div class="feature-title">Ana ekran widget'ları</div>
+    <div class="feature-desc">
+      2x2 seri widget'ı (altın seri + alev serisi + haftalık beşgen noktalar, dondurulan günde
+      kar tanesi) ve saniye saniye işleyen vakit sayacı. Kotlin RemoteViews ile yazıldı, ikisi
+      de uygulama temasına duyarlı liquid glass görünümde.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">home_widget</span>
+      <span class="ftag">RemoteViews</span>
+      <span class="ftag">Tema duyarlı</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ADDITIONAL INFO ── -->
+<section id="info">
+  <div class="section-head" style="padding-left:0; padding-right:0; max-width:none;">
+    <h2 class="section-title">Ek bilgiler</h2>
+  </div>
+  <div class="info-table">
+    <div class="info-row">
+      <div class="info-key">Sürüm</div>
+      <div class="info-val">1.1.0 (build 19) · yayına hazırlık aşamasında</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Platform</div>
+      <div class="info-val">Android ve iOS · tek Flutter kod tabanı</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Vakit hesabı</div>
+      <div class="info-val">adhan_dart · cihaz üzerinde astronomik hesap, sunucu yok</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Bildirim altyapısı</div>
+      <div class="info-val">flutter_local_notifications · exact alarm + inexact fallback + reboot receiver</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Widget köprüsü</div>
+      <div class="info-val">home_widget + Kotlin RemoteViews</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Durum yönetimi</div>
+      <div class="info-val">Global ValueNotifier denetleyicileri + shared_preferences</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Test</div>
+      <div class="info-val">Seri mantığı, gün dönümü ve yedekleme için birim testleri</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Diller</div>
+      <div class="info-val">Türkçe · English · العربية</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Geliştirici</div>
+      <div class="info-val">Hamza Murat Tortum · solo geliştirme (kod, tasarım, mağaza görselleri)</div>
+    </div>
+  </div>
+</section>
+
+<div id="proj-nav">
+  <a href="index.html" class="proj-nav-btn prev">
+    <span class="proj-nav-arrow">←</span>
+    <div class="proj-nav-text">
+      <div class="proj-nav-label">Previous</div>
+      <div class="proj-nav-title">Back to Projects</div>
+    </div>
+  </a>
+  <a href="BreadBlade.html" class="proj-nav-btn next">
+    <div class="proj-nav-text" style="text-align:right">
+      <div class="proj-nav-label">Next Project</div>
+      <div class="proj-nav-title">Bread &amp; Blade</div>
+    </div>
+    <span class="proj-nav-arrow">→</span>
+  </a>
+</div>
+
+<footer id="footer">
+  <span class="footer-copy">© 2025 Hamza Murat Tortum</span>
+  <div class="footer-links">
+    <a href="https://github.com/hamzamurat1" target="_blank" class="footer-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/hamza-murat-tortum" target="_blank" class="footer-link">LinkedIn</a>
+    <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link">Email</a>
+  </div>
+</footer>
+
+<script src="VakitTakibim.js"></script>
+</body>
+</html>

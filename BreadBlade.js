@@ -1,0 +1,122 @@
+// ── Reveal animations ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const delay = parseInt(e.target.dataset.delay || 0, 10);
+    setTimeout(() => e.target.classList.add('visible'), delay);
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.feature-card').forEach(el => observer.observe(el));
+
+// Döngü adımları sırayla açılsın
+document.querySelectorAll('.loop-step').forEach((el, i) => {
+  el.dataset.delay = i * 90;
+  observer.observe(el);
+});
+
+// ── "Bu oyun hakkında" genişlet / daralt ──
+const aboutMore   = document.getElementById('about-more');
+const aboutToggle = document.getElementById('about-toggle');
+
+aboutToggle.addEventListener('click', () => {
+  const open = aboutMore.classList.toggle('open');
+  aboutToggle.textContent = open ? 'Daha az ↑' : 'Daha fazla ↓';
+});
+
+// ── Yatay galeri ──
+const gallery = document.getElementById('gallery');
+const shots   = [...gallery.querySelectorAll('.shot')];
+const btnPrev = document.getElementById('gal-prev');
+const btnNext = document.getElementById('gal-next');
+
+const END_TOL = 2; // kesirli scrollLeft değerleri için tolerans
+
+function maxScroll() { return gallery.scrollWidth - gallery.clientWidth; }
+function atStart()   { return gallery.scrollLeft <= END_TOL; }
+function atEnd()     { return gallery.scrollLeft >= maxScroll() - END_TOL; }
+
+function syncArrows() {
+  btnPrev.disabled = atStart();
+  btnNext.disabled = atEnd();
+}
+
+function scrollByShots(dir) {
+  const step = shots[0].offsetWidth + 16; // kart genişliği + gap
+  gallery.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
+btnPrev.addEventListener('click', () => scrollByShots(-1));
+btnNext.addEventListener('click', () => scrollByShots(1));
+
+gallery.addEventListener('scroll', syncArrows, { passive: true });
+window.addEventListener('resize', syncArrows);
+syncArrows();
+
+// Fare tekerleği: dikey kaydırmayı galeride yatay kaydırmaya çevir.
+// deltaMode normalize ediliyor — Firefox satır (1) veya sayfa (2) birimi
+// gönderebiliyor, Chrome piksel (0).
+function wheelDelta(e) {
+  if (e.deltaMode === 1) return e.deltaY * 16;                  // satır
+  if (e.deltaMode === 2) return e.deltaY * gallery.clientWidth; // sayfa
+  return e.deltaY;                                             // piksel
+}
+
+// Uca varıldığı anda sayfa devralmıyor; son görsel tam görünmeden aşağı
+// kaymasın diye kısa bir bekleme var.
+const HANDOFF_DELAY = 200;
+let lockUntil = 0;
+
+gallery.addEventListener('wheel', (e) => {
+  if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return; // yatay jest: dokunma
+  const now  = e.timeStamp;
+  const down = e.deltaY > 0;
+
+  if ((down && !atEnd()) || (!down && !atStart())) {
+    e.preventDefault();
+    gallery.scrollLeft += wheelDelta(e);
+    lockUntil = now + HANDOFF_DELAY;
+    return;
+  }
+  if (now < lockUntil) e.preventDefault();
+}, { passive: false });
+
+// ── Lightbox ──
+const lightbox = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lb-img');
+const lbCap    = document.getElementById('lb-caption');
+let lbIndex = 0;
+
+function showLightbox(i) {
+  lbIndex = (i + shots.length) % shots.length;
+  const img   = shots[lbIndex].querySelector('img');
+  const stamp = shots[lbIndex].querySelector('.shot-stamp');
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCap.textContent = stamp ? stamp.textContent : '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+shots.forEach((btn, i) => btn.addEventListener('click', () => showLightbox(i)));
+
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lb-prev').addEventListener('click', (e) => {
+  e.stopPropagation(); showLightbox(lbIndex - 1);
+});
+document.getElementById('lb-next').addEventListener('click', (e) => {
+  e.stopPropagation(); showLightbox(lbIndex + 1);
+});
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowLeft')  showLightbox(lbIndex - 1);
+  if (e.key === 'ArrowRight') showLightbox(lbIndex + 1);
+});

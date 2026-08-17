@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="WeeklyPlanner.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">HMT</a>
+  <div class="nav-links">
+    <a href="about.html" class="nav-link">About</a>
+    <a href="VakitTakibim.html" class="nav-link active">Projects</a>
+    <a href="Erzurum.html" class="nav-link">Erzurum</a>
+  </div>
+</nav>
+
+<!-- ── ÜST PROJE GEÇİŞİ ── -->
+<div id="proj-nav-top">
+  <a href="PsFps.html" class="pn-mini prev">← Precision Shoot FPS</a>
+  <a href="Erzurum.html" class="pn-mini next">Erzurum →</a>
+</div>
+
+<section id="hero">
+  <div class="hero-label">NODE.JS · EXPRESS · SQLITE · PWA</div>
+  <h1 class="hero-title">Weekly <em>Planner</em></h1>
+  <p class="hero-sub">Haftalık Planlayıcı &amp; Pomodoro Sayacı</p>
+  <div class="hero-badges">
+    <span class="hbadge local">KENDİ MAKİNEMDE ÇALIŞIR</span>
+    <span class="hbadge">SÜRÜKLE-BIRAK PANO</span>
+    <span class="hbadge">POMODORO + PIP</span>
+    <span class="hbadge">OFFLINE PWA</span>
+  </div>
+</section>
+
+<!-- ── HERO EKRAN GÖRÜNTÜSÜ ── -->
+<section id="hero-shot">
+  <div class="shot-frame">
+    <img src="frames/pictures/planner/pano.webp"
+         alt="Haftalık Planlayıcı: yedi günlük pano, görev pilleri ve altta görev havuzu, Pomodoro sayacı ve haftaya ekle panelleri">
+  </div>
+  <p class="shot-caption">
+    Haftanın tamamı tek ekranda: yedi gün sütunu, tamamlanan görevler yeşil, bekleyenler kırmızı;
+    altta görev havuzu, Pomodoro sayacı ve haftaya ekle paneli.
+  </p>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stat-card">
+    <div class="stat-num">7</div>
+    <div class="stat-label">Günlük Pano</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">5</div>
+    <div class="stat-label">SQLite Tablosu</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">20</div>
+    <div class="stat-label">API Ucu</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">PWA</div>
+    <div class="stat-label">Kurulabilir</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">Bu proje hakkında</h2>
+  <p class="section-sub">
+    Kendi haftalık düzenimi tutmak için yazdığım, tek kullanıcılı bir planlayıcı.
+    Hazır bir to-do uygulaması yerine ihtiyacım olan üç şeyi tek ekranda birleştirdim:
+    haftalık pano, tekrarlayan görev kuralları ve çalışırken açık kalan bir Pomodoro sayacı.
+  </p>
+  <div class="about-box">
+    <p>
+      Uygulama üç panelden oluşuyor. Solda <strong>görev havuzu</strong> — bir görevi bir kez
+      isim ve saatiyle tanımlıyorsun, sonra tekrar yazmıyorsun. Sağda <strong>haftaya ekle</strong>
+      paneli, havuzdaki bir görevi seçtiğin günlere ve istediğin sayıda hafta ileriye tek seferde
+      kopyalıyor. Ortada ise <strong>Pomodoro</strong> duruyor.
+    </p>
+    <p>
+      Panonun kendisi yedi günlük sütunlardan oluşuyor ve görevler
+      <strong>HTML5 drag &amp; drop</strong> ile günler arasında taşınıyor; taşıma sunucuya
+      ayrı bir uç üzerinden yazılıyor. Mobilde sütunlar yan yana sığmadığı için gün geçişi
+      <strong>dokunmatik kaydırma</strong> ile yapılıyor, altta nokta göstergesi hangi günde
+      olduğunu söylüyor.
+    </p>
+    <p>
+      Pomodoro'nun iki ayrıntısı var. Birincisi: sayaç kalan süreyi değil
+      <strong>bitiş zamanını</strong> localStorage'a yazıyor — sekmeyi yenilesen de, kapatıp
+      açsan da doğru yerden devam ediyor. İkincisi: <strong>Picture-in-Picture</strong> desteği,
+      sayacı bir canvas üzerine çizip video olarak yüzen pencereye veriyor; başka bir uygulamada
+      çalışırken sayaç ekranın köşesinde kalıyor. Süre bitince ses çalıyor.
+    </p>
+    <p>
+      Veri tarafı <strong>better-sqlite3</strong> ile tek bir yerel dosyada; hesap, giriş ya da
+      bulut yok. İstatistik modalı haftalık tamamlama oranını Chart.js ile çiziyor. Service
+      worker sayesinde arayüz sunucu kapalıyken de açılıyor ve uygulama telefona
+      <strong>PWA olarak kurulabiliyor</strong>.
+    </p>
+    <div class="chip-row">
+      <span class="chip">Node.js</span>
+      <span class="chip">Express</span>
+      <span class="chip">better-sqlite3</span>
+      <span class="chip">Vanilla JS</span>
+      <span class="chip">Chart.js</span>
+      <span class="chip">Service Worker</span>
+      <span class="chip">PWA</span>
+      <span class="chip">Picture-in-Picture</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="feature-card">
+    <div class="feature-icon">🗓️</div>
+    <div class="feature-title">Sürükle-bırak haftalık pano</div>
+    <div class="feature-desc">
+      Yedi günlük sütun düzeni, hafta ileri/geri gezinme ve görevi bir günden diğerine taşıma.
+      Tamamlanan görev işaretleniyor, bir gün toptan silinebiliyor ya da ertelenmiş olarak
+      işaretlenebiliyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">HTML5 DnD</span>
+      <span class="ftag">Hafta gezinme</span>
+      <span class="ftag">Gün erteleme</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🔁</div>
+    <div class="feature-title">Tekrarlayan görev kuralları</div>
+    <div class="feature-desc">
+      "Her Pazartesi, Çarşamba, Cuma → Spor" gibi bir kural bir kez tanımlanıyor; sonra
+      "Bu haftayı otomatik doldur" ya da "N hafta ileriye ekle" ile pano tek tıkla kuruluyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Kural motoru</span>
+      <span class="ftag">Toplu üretim</span>
+      <span class="ftag">52 haftaya kadar</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">⏱️</div>
+    <div class="feature-title">Yenilemeye dayanan Pomodoro</div>
+    <div class="feature-desc">
+      Hazır süreler (5/10/15 dk mola, 25/50/60 dk çalışma) ve elle dakika-saniye girişi.
+      Sayaç kalan süreyi değil bitiş zamanını saklıyor; sekme yenilenince veya kapanıp açılınca
+      doğru yerden devam ediyor. Süre bitince ses çalıyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">localStorage</span>
+      <span class="ftag">Hazır süreler</span>
+      <span class="ftag">Sesli uyarı</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">⧉</div>
+    <div class="feature-title">Yüzen sayaç (PiP)</div>
+    <div class="feature-desc">
+      Sayaç bir canvas'a çizilip video akışına dönüştürülüyor ve Picture-in-Picture penceresine
+      veriliyor. Böylece başka bir uygulamada çalışırken sayaç ekranın köşesinde açık kalıyor —
+      tarayıcı sekmesine dönmek gerekmiyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Canvas → video</span>
+      <span class="ftag">requestPictureInPicture</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">📊</div>
+    <div class="feature-title">Haftalık istatistik</div>
+    <div class="feature-desc">
+      Toplam görev, tamamlanan görev ve tamamlama oranı; altında Chart.js ile çizilen haftalık
+      grafik. Pomodoro oturumları da kaydedilip ayrı bir istatistik ucundan okunuyor.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Chart.js</span>
+      <span class="ftag">Tamamlama oranı</span>
+      <span class="ftag">Oturum kaydı</span>
+    </div>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">📴</div>
+    <div class="feature-title">Kurulabilir ve çevrimdışı</div>
+    <div class="feature-desc">
+      Manifest ve service worker ile telefona uygulama olarak kurulabiliyor, standalone modda
+      açılıyor. Arayüz önbelleklendiği için sunucu kapalıyken de yükleniyor. Veri tek bir yerel
+      SQLite dosyasında — hesap, giriş ve bulut yok.
+    </div>
+    <div class="feature-tags">
+      <span class="ftag">Manifest + SW</span>
+      <span class="ftag">Standalone</span>
+      <span class="ftag">Hesap yok</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── EKRAN GÖRÜNTÜLERİ ── -->
+<section id="screenshots">
+
+  <div class="shot-row">
+    <div class="shot-img-wrap">
+      <img class="shot-img" src="frames/pictures/planner/istatistik.webp"
+           alt="Haftalık istatistik modalı: 32 toplam görev, 18 tamamlanan, %56 tamamlanma oranı ve günlere göre çubuk grafik">
+    </div>
+    <div class="shot-text">
+      <div class="shot-tag">Stats · Chart.js</div>
+      <h2 class="shot-title">Haftalık<br>istatistik</h2>
+      <p class="shot-desc">
+        Üç sayı üstte — toplam görev, tamamlanan, tamamlanma oranı — altında günlere göre
+        çubuk grafik. Grafik üç seriyi ayrı ayrı gösteriyor: toplam, tamamlanan ve ertelenen.
+        Böylece "hangi gün tutmuyor" sorusu tek bakışta cevaplanıyor.
+      </p>
+      <div class="shot-tags">
+        <span class="stag">Chart.js</span>
+        <span class="stag">3 seri</span>
+        <span class="stag">Tamamlanma oranı</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shot-row reverse">
+    <div class="shot-img-wrap">
+      <img class="shot-img" src="frames/pictures/planner/tekrarlayan.webp"
+           alt="Tekrarlayan görevler modalı: gün seçimli kural editörü ve kayıtlı kurallar listesi">
+    </div>
+    <div class="shot-text">
+      <div class="shot-tag">Recurring Rules</div>
+      <h2 class="shot-title">Bir kez ayarla,<br>her hafta doldur</h2>
+      <p class="shot-desc">
+        Havuzdan bir görev seç, hangi günlerde tekrarlayacağını işaretle, kuralı kaydet.
+        Sonrası tek tık: "Bu haftayı otomatik doldur" ya da hafta sayısı verip ileri haftalara
+        toptan ekle. Kayıtlı kurallar altta listeleniyor ve tek tek silinebiliyor.
+      </p>
+      <div class="shot-tags">
+        <span class="stag">Gün seçimi</span>
+        <span class="stag">Toplu üretim</span>
+        <span class="stag">Kural listesi</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── VERİ MODELİ ── -->
+<section id="schema">
+  <h2 class="section-title">Veri modeli</h2>
+  <p class="section-sub">
+    Beş tablo, tek yerel SQLite dosyası (<code>data/pomodoro.db</code>). Görev tanımı ile o
+    görevin haftadaki örneği bilinçli olarak ayrı: havuzdaki bir kaydı düzenlemek geçmiş
+    haftaları bozmuyor.
+  </p>
+  <div class="schema-grid">
+    <div class="table-card">
+      <div class="table-name">TaskPool</div>
+      <div class="table-cols">
+        <div class="col-row"><b>id</b></div>
+        <div class="col-row">name</div>
+        <div class="col-row">time</div>
+        <div class="col-row api-desc" style="font-family:inherit; padding-top:8px">Görev tanımları — bir kez yazılır, tekrar kullanılır.</div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-name">WeeklyTask</div>
+      <div class="table-cols">
+        <div class="col-row"><b>id</b></div>
+        <div class="col-row">date</div>
+        <div class="col-row">name · time</div>
+        <div class="col-row">done</div>
+        <div class="col-row api-desc" style="font-family:inherit; padding-top:8px">Panodaki tek tek görev örnekleri.</div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-name">RecurringTask</div>
+      <div class="table-cols">
+        <div class="col-row"><b>id</b></div>
+        <div class="col-row">poolId</div>
+        <div class="col-row">weekdays</div>
+        <div class="col-row api-desc" style="font-family:inherit; padding-top:8px">"Her Pzt/Çar/Cum" kuralları.</div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-name">DayPostponed</div>
+      <div class="table-cols">
+        <div class="col-row"><b>date</b></div>
+        <div class="col-row api-desc" style="font-family:inherit; padding-top:8px">Toptan ertelenmiş günler.</div>
+      </div>
+    </div>
+    <div class="table-card">
+      <div class="table-name">PomodoroSession</div>
+      <div class="table-cols">
+        <div class="col-row"><b>id</b></div>
+        <div class="col-row">date</div>
+        <div class="col-row">minutes</div>
+        <div class="col-row api-desc" style="font-family:inherit; padding-top:8px">Tamamlanan çalışma oturumları.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── API ── -->
+<section id="api">
+  <h2 class="section-title">REST uçları</h2>
+  <p class="section-sub">
+    Express üzerinde 20 uç; en sonda tek sayfa uygulaması için catch-all fallback.
+  </p>
+  <div class="api-box">
+    <div class="api-row">
+      <span class="verb get">GET</span>
+      <span class="path">/taskpool</span>
+      <span class="api-desc">Görev havuzunu getir</span>
+    </div>
+    <div class="api-row">
+      <span class="verb post">POST</span>
+      <span class="path">/taskpool</span>
+      <span class="api-desc">Havuza yeni görev tanımı ekle</span>
+    </div>
+    <div class="api-row">
+      <span class="verb put">PUT</span>
+      <span class="path">/taskpool/:id</span>
+      <span class="api-desc">Havuzdaki görevin adını / saatini güncelle</span>
+    </div>
+    <div class="api-row">
+      <span class="verb delete">DEL</span>
+      <span class="path">/taskpool/:id · /taskpool-reset</span>
+      <span class="api-desc">Tek görevi ya da tüm havuzu sil</span>
+    </div>
+    <div class="api-row">
+      <span class="verb get">GET</span>
+      <span class="path">/weekly?start=…</span>
+      <span class="api-desc">Belirli haftanın görevlerini getir</span>
+    </div>
+    <div class="api-row">
+      <span class="verb post">POST</span>
+      <span class="path">/weekly</span>
+      <span class="api-desc">Panoya görev ata (çoklu gün / çoklu hafta)</span>
+    </div>
+    <div class="api-row">
+      <span class="verb put">PUT</span>
+      <span class="path">/weekly/:id · /weekly/:id/move</span>
+      <span class="api-desc">Tamamlandı işaretle · başka güne taşı</span>
+    </div>
+    <div class="api-row">
+      <span class="verb delete">DEL</span>
+      <span class="path">/weekly/:id · /weekly/day/:date</span>
+      <span class="api-desc">Tek görevi ya da o günün tamamını sil</span>
+    </div>
+    <div class="api-row">
+      <span class="verb post">POST</span>
+      <span class="path">/postpone/:date</span>
+      <span class="api-desc">Günü ertelenmiş işaretle</span>
+    </div>
+    <div class="api-row">
+      <span class="verb get">GET</span>
+      <span class="path">/recurring</span>
+      <span class="api-desc">Kayıtlı tekrar kurallarını listele</span>
+    </div>
+    <div class="api-row">
+      <span class="verb post">POST</span>
+      <span class="path">/recurring/generate</span>
+      <span class="api-desc">Kurallardan N haftalık pano üret</span>
+    </div>
+    <div class="api-row">
+      <span class="verb get">GET</span>
+      <span class="path">/pomodoro/stats</span>
+      <span class="api-desc">Oturum istatistiklerini getir</span>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+  <h2 class="section-title">Ek bilgiler</h2>
+  <div class="info-table">
+    <div class="info-row">
+      <div class="info-key">Tür</div>
+      <div class="info-val">Kişisel araç · tek kullanıcılı, yerel ağda çalışan web uygulaması</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Sunucu</div>
+      <div class="info-val">Node.js + Express · statik dosya sunumu + REST API + SPA fallback</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Veritabanı</div>
+      <div class="info-val">better-sqlite3 · tek dosya (<code>data/pomodoro.db</code>), 5 tablo</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Ön yüz</div>
+      <div class="info-val">Bağımlılıksız vanilla JS · Chart.js yalnız istatistik grafiği için</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Çevrimdışı</div>
+      <div class="info-val">Service worker önbelleği + web app manifest · standalone PWA kurulumu</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Çalıştırma</div>
+      <div class="info-val">Tek tık başlatma betiği (<code>Planlayici_Baslat.bat</code>) ile yerel sunucu</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Kimlik doğrulama</div>
+      <div class="info-val">Yok — kasıtlı olarak. Hesap, bulut ve senkronizasyon yok.</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">Geliştirici</div>
+      <div class="info-val">Hamza Murat Tortum · solo geliştirme</div>
+    </div>
+  </div>
+</section>
+
+<div id="proj-nav">
+  <a href="PsFps.html" class="proj-nav-btn prev">
+    <span class="proj-nav-arrow">←</span>
+    <div class="proj-nav-text">
+      <div class="proj-nav-label">Previous</div>
+      <div class="proj-nav-title">Precision Shoot FPS</div>
+    </div>
+  </a>
+  <a href="Erzurum.html" class="proj-nav-btn next">
+    <div class="proj-nav-text" style="text-align:right">
+      <div class="proj-nav-label">Next Project</div>
+      <div class="proj-nav-title">Erzurum</div>
+    </div>
+    <span class="proj-nav-arrow">→</span>
+  </a>
+</div>
+
+<footer id="footer">
+  <span class="footer-copy">© 2025 Hamza Murat Tortum</span>
+  <div class="footer-links">
+    <a href="https://github.com/hamzamurat1" target="_blank" class="footer-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/hamza-murat-tortum" target="_blank" class="footer-link">LinkedIn</a>
+    <a href="mailto:hamzamurattortum1@gmail.com" class="footer-link">Email</a>
+  </div>
+</footer>
+
+<script src="WeeklyPlanner.js"></script>
+</body>
+</html>

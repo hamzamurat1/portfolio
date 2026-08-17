@@ -45,9 +45,35 @@ body {
 .nav-link:hover { color:var(--dark); }
 
 
+/* ── ÜST PROJE GEÇİŞİ ── */
+#proj-nav-top {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 96px 5vw 0;
+  display: flex; justify-content: space-between;
+  gap: 12px;
+}
+.pn-mini {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  padding: 8px 15px; border-radius: 20px;
+  border: 1px solid rgba(212,160,23,0.16);
+  background: rgba(255,255,255,0.5);
+  transition: all 0.22s;
+  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.pn-mini:hover {
+  color: var(--accent); border-color: rgba(212,160,23,0.4);
+  background: var(--card);
+}
+.pn-mini.next { margin-left: auto; }
+
 /* HERO */
 #hero {
-  padding: 110px 5vw 40px;
+  padding: 22px 5vw 40px;
   text-align: center;
   opacity:0; animation: fadeUp 0.9s ease 0.3s forwards;
 }
@@ -404,10 +430,11 @@ body {
   color: var(--dark); letter-spacing: -0.2px;
 }
 
-</style>
-
 /* ── Mobil dikey: video + kartlar görünür, video genişliği stretch ile düzeltildi ── */
 @media (max-width:768px) {
+  #proj-nav-top { padding-top: 82px; }
+  .pn-mini { font-size: 9px; padding: 7px 12px; max-width: 46%; }
+
   #sticky-section {
     height: 280vh; /* scroll-scrub mesafesi korunuyor, sadece kısaltıldı */
   }

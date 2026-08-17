@@ -99,7 +99,12 @@ html, body {
   position:fixed; left:5vw; top:88px; z-index:10;
   max-width:400px;
   opacity:0; animation:fadeUp 0.9s ease 0.5s forwards;
+  transition:max-width 0.35s ease;
 }
+/* PROJECTS sekmesi etkinken 2 sütunlu proje ızgarasına yer aç.
+   Genişlik bilinçli olarak sınırlı: panel arka plan videosunun
+   aydınlanan sağ tarafına taşarsa metin okunmaz oluyor. */
+#left-panel.wide { max-width:min(72vw, 580px); }
 
 #eyebrow {
   font-size:10px; font-weight:600; letter-spacing:5px;
@@ -164,7 +169,14 @@ html, body {
 }
 
 /* Projects */
-.proj-list { display:flex; flex-direction:column; gap:16px; }
+/* 6 proje dikey listede ekrana sığmıyordu → 2 sütun × 3 satır.
+   Izgara 400px'lik panele sığmadığı için PROJECTS sekmesi etkinken
+   #left-panel genişliyor (index.js .wide sınıfını ekliyor). */
+.proj-list {
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:18px 26px;
+}
 .proj-item {
   border-left:2px solid rgba(232,200,74,0.2);
   padding-left:16px; transition:border-color 0.2s;
@@ -251,4 +263,13 @@ html, body {
 
   #navbar { padding:10px 5vw; }
   #footer { padding:8px 5vw; }
+}
+
+/* ── Proje ızgarası: dar ekranlarda tek sütuna düş ── */
+@media (max-width:900px) {
+  #left-panel.wide { max-width:90vw; }
+  .proj-list { gap:14px 18px; }
+}
+@media (max-width:600px) {
+  .proj-list { grid-template-columns:1fr; gap:14px; }
 }
