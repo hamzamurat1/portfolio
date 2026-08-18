@@ -59,6 +59,20 @@ const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
 const successMsg = document.getElementById('form-success');
 const errorMsg = document.getElementById('form-error');
+const errorDetail = document.getElementById('form-error-detail');
+
+function trAktif() {
+  try { return localStorage.getItem('hmt-lang') === 'tr'; } catch (e) { return false; }
+}
+
+// Formspree'nin JSON hata govdesinden okunabilir bir mesaj cikarir.
+function hataMesaji(data) {
+  if (!data) return '';
+  if (Array.isArray(data.errors) && data.errors.length) {
+    return data.errors.map(e => e.message || e.code).filter(Boolean).join(' · ');
+  }
+  return data.error || '';
+}
 
 form.addEventListener('submit', async (e) => {
 
@@ -66,12 +80,15 @@ form.addEventListener('submit', async (e) => {
 
   successMsg.style.display = 'none';
   errorMsg.style.display = 'none';
+  errorDetail.style.display = 'none';
+  errorDetail.textContent = '';
 
   const originalText = submitBtn.innerHTML;
-  var _tr = (function(){ try { return localStorage.getItem('hmt-lang') === 'tr'; }
-                       catch (e) { return false; } })();
-  submitBtn.innerHTML = _tr ? 'Gönderiliyor...' : 'Sending...';
+  const tr = trAktif();
+  submitBtn.innerHTML = tr ? 'Gönderiliyor...' : 'Sending...';
   submitBtn.disabled = true;
+
+  let yonlendirildi = false;
 
   try {
     const response = await fetch(form.action, {
@@ -83,18 +100,38 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       form.reset();
       successMsg.style.display = 'block';
-      submitBtn.innerHTML = _tr ? 'Mesaj Gönderildi ✓' : 'Message Sent ✓';
-    } else {
-      throw new Error('Form submission failed');
+      submitBtn.innerHTML = tr ? 'Mesaj Gönderildi ✓' : 'Message Sent ✓';
+      return;
     }
+
+    const data = await response.json().catch(() => null);
+    const mesaj = hataMesaji(data);
+
+    // Formda reCAPTCHA acikken Formspree AJAX gonderimini 403 ile reddediyor.
+    // Bu durumda klasik form gonderimine dusuyoruz: Formspree kendi sayfasinda
+    // dogrulamayi alip mesaji iletiyor, yani mesaj kaybolmuyor.
+    if (response.status === 403 && /recaptcha|custom key/i.test(mesaj)) {
+      submitBtn.innerHTML = tr ? 'Doğrulamaya yönlendiriliyor...' : 'Redirecting to verification...';
+      yonlendirildi = true;
+      form.submit();   // submit olayini tetiklemez, dongu olusmaz
+      return;
+    }
+
+    throw new Error(mesaj || ('HTTP ' + response.status));
+
   } catch (err) {
     errorMsg.style.display = 'block';
+    if (err && err.message) {
+      errorDetail.textContent = err.message;
+      errorDetail.style.display = 'block';
+    }
+    console.error('Formspree:', err);
     submitBtn.innerHTML = originalText;
   } finally {
-    submitBtn.disabled = false;
-    setTimeout(() => {
-      submitBtn.innerHTML = originalText;
-    }, 3000);
+    if (!yonlendirildi) {
+      submitBtn.disabled = false;
+      setTimeout(() => { submitBtn.innerHTML = originalText; }, 3000);
+    }
   }
 
 });
